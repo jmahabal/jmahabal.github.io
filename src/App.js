@@ -15,9 +15,6 @@ class App extends Component {
     return (
       <div>
         <div>
-          This header should be everywhere.
-        </div>
-        <div>
           <Route exact path="/" component={Home} />
           <Route path="/resume" component={Resume} />
           <Route path="/projects" component={Projects} />
