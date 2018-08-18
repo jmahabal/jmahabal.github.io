@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ProjectCard from './ProjectCard';
-import { H1, H2, H6 } from './ui/Headings';
+import { H1, H2, H3, H6 } from './ui/Typography';
+import { TwoColumn } from './ui/Grid.js';
 
 class Projects extends Component {
 
@@ -16,9 +17,8 @@ class Projects extends Component {
           <H1>Projects</H1>
           <H2>This is a collection of the personal projects I’ve built. Most recently I’ve been interested in twitter bots and machine learning.</H2>
             
-          <H6 id='twitter-bots'>Twitter Bots</H6>
-          <div class='portfolio-grouping'>
-
+          <H3 id='twitter-bots'>Twitter Bots</H3>
+          <TwoColumn>
             <ProjectCard
               title='Gender Diversity in Movies (Aug. 2017)'
               description='On a movie’s release date this bot posts a bar chart of the cast member breakdown by gender. People can also request a specific movie by @-ing the bot with the title.'
@@ -27,14 +27,12 @@ class Projects extends Component {
               imageDescription='bar chart of gender breakdown'
               imageUrl='static/portfolio-photos/resized/dunkirk.jpg'
             />
-
             <ProjectCard
               title='Wojbomb Predictor (July 2017)'
               description='Adrian Wojnarowski is a prominent basketball reporter known for breaking news. This bot uses Woj’s past tweets to generate a model that can predict the popularity of any of news he breaks, useful for only being updated on the truly important stuff.'
               ariaDescription='Wojbomb Predictor'
               url='https://twitter.com/wojbombdetector'
             />
-
             <ProjectCard
               title='Generated San Francisco Neighborhoods (June 2017)'
               description='Realtors will sometimes rename less-desirable neighborhoods (such as KoNo for Koreatown Northgate) in order to attract more buyers. This bot generates a portmanteau’d new neighborhood in San Francisco and then maps its location.'
@@ -42,28 +40,29 @@ class Projects extends Component {
               url='https://twitter.com/somisspo'
               imageDescription='map of labelling a fake sf neighborhood'
               imageUrl='static/portfolio-photos/resized/somisspo.jpg'
-            />
-            
-          </div>
+            />        
+          </TwoColumn>
 
           <H6 id='front-end'>Websites</H6>
           <div class='portfolio-grouping'>
 
-            <div class='portfolio-item'>
-              <div class="portfolio-item-title">Abhivyakti (March 2018)</div>
-              <a href="https://abhivyakti.org" target="_blank" rel="noopener" aria-label="Abhivyakti">
-                <img alt="two women talking to each other" data-src="static/portfolio-photos/resized/abhivyakti.jpg" />
-              </a>
-              <div class="portfolio-item-text">I designed and built the website for Abhivyakti, a Los Angeles-based Marathi theater group. The site is a JAMstack application built in Vue with Contentful as the content repository. </div>
-            </div>
+            <ProjectCard
+              title='Abhivyakti (March 2018)'
+              description='I designed and built the website for Abhivyakti, a Los Angeles-based Marathi theater group. The site is a JAMstack application built in Vue with Contentful as the content repository.'
+              ariaDescription='Abhivyakti'
+              url='https://abhivyakti.org'
+              imageDescription='two women talking to each other'
+              imageUrl='static/portfolio-photos/resized/abhivyakti.jpg'
+            />
 
-            <div class='portfolio-item'>
-              <div class="portfolio-item-title">Valerie Law (Feb. 2018)</div>
-              <a href="http://www.vlrrth.com" target="_blank" rel="noopener" aria-label="Valerie Law">
-                <img alt="a woman standing in a greenhouse" data-src="static/portfolio-photos/resized/val.jpg" />
-              </a>
-              <div class="portfolio-item-text">I designed and built Valerie’s personal website, including setting up the domain and deployment pipeline.</div>
-            </div>
+            <ProjectCard
+              title='Valerie Law (Feb. 2018)'
+              description='I designed and built Valerie’s personal website, including setting up the domain and deployment pipeline.'
+              ariaDescription='Valerie Law'
+              url='http://www.vlrrth.org'
+              imageDescription='a woman standing in a greenhouse'
+              imageUrl='static/portfolio-photos/resized/val.jpg'
+            />
 
           </div>
 

@@ -4,4 +4,4 @@ const Button = styled.button`
     padding: 2em;
 `;
 
-export default Button
+export { Button }

@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import { H1, H2, H4, H6, P } from './ui/Headings';
+import { H1, H2, H4, H6, P } from './ui/Typography';
 import { Card } from './ui/Cards';
 import styled from 'styled-components';
+import { space } from 'styled-system';
 
 const FillerImage = styled.div`
-  height: 75px;
+  height: 60px;
+  margin: 12px 0;
   background: repeating-linear-gradient(45deg, #95a5a6, #95a5a6 10px, #ecf0f1 10px, #ecf0f1 20px);
 `;
 

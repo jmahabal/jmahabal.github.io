@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
-const sansserif = '"Asap", sans-serif';
-const serif = '"Tangerine", serif';
-const monospace = '"Inconsalata", monospace';
+const sansserif = `"Asap", sans-serif`;
+const serif = `"Tangerine", serif`;
+const monospace = `"Inconsalata", monospace`;
+
+const typography = ``;
 
 const H1 = styled.h1`
     font-size: 36px;
@@ -12,6 +14,13 @@ const H1 = styled.h1`
 `;
 
 const H2 = styled.h2`
+    font-size: 30px;
+    font-family: ${sansserif};
+    font-weight: normal;
+    margin: 0;
+`;
+
+const H3 = styled.h3`
     font-size: 24px;
     font-family: ${sansserif};
     font-weight: normal;
@@ -19,7 +28,7 @@ const H2 = styled.h2`
 `;
 
 const H4 = styled.h4`
-    font-size: 24px;
+    font-size: 18px;
     font-family: ${sansserif};
     font-weight: normal;
     margin: 0;
@@ -37,12 +46,7 @@ const P = styled.p`
     font-family: ${sansserif};
     font-weight: normal;
     margin: 0;
+    line-height: 1.2;
 `;
 
-export {
-    H1,
-    H2,
-    H4,
-    H6,
-    P
-}
+export { H1, H2, H3, H4, H6, P }
