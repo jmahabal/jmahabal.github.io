@@ -4,6 +4,15 @@ import ProjectCard from './ProjectCard';
 import { H1, H2, H3, H6 } from './ui/Typography';
 import { TwoColumn } from './ui/Grid.js';
 
+const ProjectSection = ({title, children}) => (
+  <div>
+    <H3 id={title}>{title}</H3>
+    <TwoColumn>
+      {children}
+    </TwoColumn>
+  </div>
+);
+
 class Projects extends Component {
 
   constructor(props) {
@@ -12,13 +21,12 @@ class Projects extends Component {
 
   render() {
     return (
-      <div class="portfolio-page">
+      <div class="portfolio-page" style={{background: "white", color: "black"}}>
         <div class='portfolio-container' role="main">
           <H1>Projects</H1>
           <H2>This is a collection of the personal projects I’ve built. Most recently I’ve been interested in twitter bots and machine learning.</H2>
-            
-          <H3 id='twitter-bots'>Twitter Bots</H3>
-          <TwoColumn>
+          
+          <ProjectSection title='Twitter Bots'>
             <ProjectCard
               title='Gender Diversity in Movies (Aug. 2017)'
               description='On a movie’s release date this bot posts a bar chart of the cast member breakdown by gender. People can also request a specific movie by @-ing the bot with the title.'
@@ -41,11 +49,9 @@ class Projects extends Component {
               imageDescription='map of labelling a fake sf neighborhood'
               imageUrl='static/portfolio-photos/resized/somisspo.jpg'
             />        
-          </TwoColumn>
+          </ProjectSection>
 
-          <H6 id='front-end'>Websites</H6>
-          <div class='portfolio-grouping'>
-
+          <ProjectSection title='Websites'>
             <ProjectCard
               title='Abhivyakti (March 2018)'
               description='I designed and built the website for Abhivyakti, a Los Angeles-based Marathi theater group. The site is a JAMstack application built in Vue with Contentful as the content repository.'
@@ -54,7 +60,6 @@ class Projects extends Component {
               imageDescription='two women talking to each other'
               imageUrl='static/portfolio-photos/resized/abhivyakti.jpg'
             />
-
             <ProjectCard
               title='Valerie Law (Feb. 2018)'
               description='I designed and built Valerie’s personal website, including setting up the domain and deployment pipeline.'
@@ -63,66 +68,61 @@ class Projects extends Component {
               imageDescription='a woman standing in a greenhouse'
               imageUrl='static/portfolio-photos/resized/val.jpg'
             />
+          </ProjectSection>
 
-          </div>
+          <H3 id='other-tech'>Other Technology</H3>
+          <TwoColumn>
+            <ProjectCard
+              title='Movie Diversity CLI (Apr. 2018)'
+              description='I built a command-line tool that outputs the breakdown by gender of a given movie’s cast.'
+              ariaDescription='Movie Diversity CLI'
+              url='https://github.com/jmahabal/movie-diversity-cli'
+              imageDescription='a bar chart made up of emojis'
+              imageUrl='static/portfolio-photos/resized/coco.jpg'
+            />
+            <ProjectCard
+              title='“Don’t Call Me Iggy” Reddit Bot (Apr. 2018)'
+              description='Fans sometimes call Andre Iguodala “Iggy”, a name he doesn’t really care for. This bot reminds posters on Reddit that they should try to pick an alternative nickname.'
+              ariaDescription='Don’t Call Me Iggy'
+              url='https://www.reddit.com/u/dont-call-me-iggy'
+            />
+            <ProjectCard
+              title='SMS-Based Grocery List (Oct. 2017)'
+              description='I used Twilio and Firebase to create a grocery list application. My roommates and I can all text a phone number and work off of the same editable list.'
+              ariaDescription='SMS-Based Grocery List'
+              url='https://medium.com/@jaymahabal/weekend-project-building-an-sms-based-grocery-list-using-twilio-and-firebase-435feb0b3395'
+              imageDescription='text conversation with the bot'
+              imageUrl='static/portfolio-photos/resized/grocerylist.jpg'
+            />
+          </TwoColumn>
 
-          <div id='other-tech' class='portfolio-grouping-title'>Other Technology</div>
-          <div class='portfolio-grouping'>
-
-            <div class='portfolio-item'>
-              <div class="portfolio-item-title">Movie Diversity CLI (Apr. 2018)</div>
-              <a href="https://github.com/jmahabal/movie-diversity-cli" target="_blank" rel="noopener" aria-label="Movie Diversity CLI">
-                <img alt="a bar chart made up of emojis" data-src="static/portfolio-photos/resized/coco.jpg" />
-              </a>
-              <div class="portfolio-item-text">I built a command-line tool that outputs the breakdown by gender of a given movie’s cast.</div>
-            </div>
-
-            <div class='portfolio-item'>
-              <div class="portfolio-item-title">“Don’t Call Me Iggy” Reddit Bot (Apr. 2018)</div>
-              <a href="https://www.reddit.com/u/dont-call-me-iggy" target="_blank" rel="noopener" aria-label="Don’t Call Me Iggy">
-                <div class="twitter filler-image"></div>
-              </a>
-              <div class="portfolio-item-text">Fans sometimes call Andre Iguodala “Iggy”, a name he doesn’t really care for. This bot reminds posters on Reddit that they should try to pick an alternative nickname.</div>
-            </div>
-
-            <div class='portfolio-item'>
-              <div class="portfolio-item-title">SMS-Based Grocery List (Oct. 2017)</div>
-              <a href="https://medium.com/@jaymahabal/weekend-project-building-an-sms-based-grocery-list-using-twilio-and-firebase-435feb0b3395" target="_blank" rel="noopener" aria-label="SMS-Based Grocery List">
-                <img alt="text conversation with the bot" data-src="static/portfolio-photos/resized/grocerylist.jpg" />
-              </a>
-              <div class="portfolio-item-text">I used Twilio and Firebase to create a grocery list application. My roommates and I can all text a phone number and work off of the same editable list.</div>
-            </div>
-
-          </div>
-
-          <div id='cartography' class='portfolio-grouping-title'>Cartography</div>
-          <div class='portfolio-grouping'>
-
-            <div class='portfolio-item'>
-              <div class="portfolio-item-title">Emoji Map (Sept. 2016)</div>
-              <a href="http://www.mahabal.io/emoji" target="_blank" rel="noopener" aria-label="Emoji Map">
-                <img alt="a gridmap of emojis of the bay area" data-src="static/portfolio-photos/resized/emojimap.jpg" />
-              </a>
-              <div class="portfolio-item-text">We use mental maps everyday, guiding our journey across space. Locations are not just physical but also emotional. I mapped the Bay Area, condensing the vibrancy and diversity of the city into emoji form.</div>
-            </div>
-
-            <div class='portfolio-item'>
-              <div class="portfolio-item-title">Travel Paths of CFB Teams (Jan. 2017)</div>
-              <a href="/cfbmap" target="_blank" rel="noopener" aria-label="Travel Paths of CFB Teams Map">
-                <img alt="a map of flight paths of cfb teams" data-src="static/portfolio-photos/resized/cfbmap.jpg" />
-              </a>
-              <div class="portfolio-item-text">While they don't always literally fly, the flight paths college football teams make a beautiful spiderweb over the country.</div>
-            </div>
-
-            <div class='portfolio-item'>
-              <div class="portfolio-item-title">California Students Stay Close to Home (Dec. 2013)</div>
-              <a href="http://www.mahabal.io/static/location/jay_final_project.pdf" target="_blank" rel="noopener" aria-label="California Students Stay Close to Home Map">
-                <img alt="a choropleth of california counties" data-src="static/portfolio-photos/resized/uc.jpg" />
-              </a>
-              <div class="portfolio-item-text">With the exception of UCLA and UC Berkeley, the home county of each University of California campus sent the majority of its UC-attending students there; students tend to stay near home.</div>
-            </div>
-
-          </div>
+          <H3 id='cartography'>Cartography</H3>
+          <TwoColumn>
+            <ProjectCard
+              title='Emoji Map (Sept. 2016)'
+              description='We use mental maps everyday, guiding our journey across space. Locations are not just physical but also emotional. I mapped the Bay Area, condensing the vibrancy and diversity of the city into emoji form.'
+              ariaDescription='Emoji Map'
+              url='http://www.mahabal.io/emoji'
+              imageDescription='a gridmap of emojis of the bay area'
+              imageUrl='static/portfolio-photos/resized/emojimap.jpg'
+            />
+            <ProjectCard
+              title='Travel Paths of CFB Teams (Jan. 2017)'
+              description='While they don’t always literally fly, the flight paths college football teams make a beautiful spiderweb over the country.'
+              ariaDescription='Travel Paths of CFB Teams Map'
+              url='http://www.mahabal.io/cfbmap'
+              imageDescription='a map of flight paths of cfb teams'
+              imageUrl='static/portfolio-photos/resized/cfbmap.jpg'
+            />
+            <ProjectCard
+              title='California Students Stay Close to Home (Dec. 2013)'
+              description='With the exception of UCLA and UC Berkeley, the home county of each University of California campus sent the majority of its UC-attending students there; students tend to stay near home.'
+              ariaDescription='California Students Stay Close to Home Map'
+              url='http://www.mahabal.io/static/location/jay_final_project.pdf'
+              imageDescription='a choropleth of california counties'
+              imageUrl='static/portfolio-photos/resized/uc.jpg'
+            />
+          </TwoColumn>
 
           <div id='data-visualization' class='portfolio-grouping-title'>Data Visualization</div>
           <div class='portfolio-grouping'>

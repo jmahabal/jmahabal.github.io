@@ -42,7 +42,7 @@ const H6 = styled.h6`
 `;
 
 const P = styled.p`
-    font-size: 16px;
+    font-size: 14px;
     font-family: ${sansserif};
     font-weight: normal;
     margin: 0;
