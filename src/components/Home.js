@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import Button from './ui/Button';
+import { Span, P, H1, H2, H3, H4, H6 } from './ui/Typography';
+
+const HistoryItem = ({children}) => (
+    <H4 mt={3} mb={3}>{children}</H4>
+)
 
 class Home extends Component {
 
@@ -12,49 +16,24 @@ class Home extends Component {
     return (
         <div className="box">
             <div className="description-container" role="main">
-                <div className="row intro-name-container">
-                    <div></div>
-                    <h1 className="intro-name">
-                        Hi, I’m Jay.
-                    </h1>
-                </div>
-                <div className="row">
-                    <div className="i-container">
-                        <span className="i">I</span>
-                    </div>
-                    <div className="description">
-                        am currently a creative technologist at <a href="http://www.akqa.com/" target="_blank" rel="noopener">AKQA</a>.
-                    </div>
-                </div>   
-                <div className="row">
-                    <div className="i-container">
-                        <span className="i">I</span>
-                    </div>
-                    <div className="description">
-                        graduated from <a href="http://www.berkeley.edu/" target="_blank" rel="noopener">UC Berkeley</a> in 2016 with a degree in <a href="https://math.berkeley.edu/" target="_blank" rel="noopener">Mathematics</a>, a minor in <a href="https://nature.berkeley.edu/advising/minors/gist" target="_blank" rel="noopener">GIST</a>, a certificate in <a href="http://bcnm.berkeley.edu/" target="_blank" rel="noopener">New Media</a>, and a desire to create great data visualization.
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="i-container">
-                        <span className="i">I</span>
-                    </div>
-                    <div className="description">
-                        have worked as a data journalist at <a href="http://www.h2o.ai/" target="_blank" rel="noopener">H2O.ai</a>, an intern at the <a href="http://youarehere.cc/" target="_blank" rel="noopener">MIT Media Lab</a>, and as a system administrator at the <a href="https://iris.eecs.berkeley.edu//05-helpdesk/" target="_blank" rel="noopener">UC Berkeley EECS Department</a>.
-                    </div>
-                </div>
-                <div className="row">
-                    <div className="i-container">
-                        <span className="i">I</span>
-                    </div>
-                    <div className="description">
-                        love to read books, play board games (current favorites are Power Grid & Agricola), and take photos.
-                    </div>
-                </div>
+                <H1 mb={2}>Hi, I’m Jay.</H1>
+                <HistoryItem>
+                    I’m currently a front-end engineer based in San Francisco.
+                </HistoryItem>
+                <HistoryItem>
+                    I was previously a creative technologist at <a href="http://www.akqa.com/" target="_blank" rel="noopener">AKQA</a>, a data journalist at <a href="http://www.h2o.ai/" target="_blank" rel="noopener">H2O.ai</a>, an intern at the <a href="http://youarehere.cc/" target="_blank" rel="noopener">MIT Media Lab</a>, and as a system administrator at the <a href="https://iris.eecs.berkeley.edu//05-helpdesk/" target="_blank" rel="noopener">UC Berkeley EECS Department</a>.
+                </HistoryItem>
+                <HistoryItem>
+                    I graduated from <a href="http://www.berkeley.edu/" target="_blank" rel="noopener">UC Berkeley</a> in 2016 with a degree in <a href="https://math.berkeley.edu/" target="_blank" rel="noopener">Mathematics</a>, a minor in <a href="https://nature.berkeley.edu/advising/minors/gist" target="_blank" rel="noopener">GIST</a>, a certificate in <a href="http://bcnm.berkeley.edu/" target="_blank" rel="noopener">New Media</a>, and a desire to create great data visualization.
+                </HistoryItem>
+                <HistoryItem>
+                    I love to read books, play board games (current favorites are Power Grid & Agricola), and take photos.
+                </HistoryItem>
             
                 <div id="links">
-                    <Link to="/projects"><a>Projects</a></Link>
-                    <span>|</span>
-                    <Link to="/resume"><a>Resume</a></Link>
+                    <Link to="/projects">Projects</Link>
+                    <Span pl={3} pr={3}>//</Span>
+                    <Link to="/resume">Resume</Link>
                 </div>
                 <div className="swing-below">
                     {/* <a href="https://www.github.com/jmahabal" target="_blank" rel="noopener" className="icon" aria-label="Github">

@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { H1, H2, H4, H6, P } from './ui/Typography';
 import { Card } from './ui/Cards';
 import styled from 'styled-components';
-import { space } from 'styled-system';
 
 const FillerImage = styled.div`
   height: 60px;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ProjectCard from './ProjectCard';
-import { H1, H2, H3, H6 } from './ui/Typography';
+import { H1, H2, H3, H4, H6 } from './ui/Typography';
 import { TwoColumn } from './ui/Grid.js';
 
 // TODO: move to a utils folder
@@ -11,7 +11,7 @@ const toKebabCase = (word) => {
 
 const ProjectSection = ({title, children}) => (
   <div>
-    <H3 id={toKebabCase(title)}>{title}</H3>
+    <H3 id={toKebabCase(title)} mt={4} mb={2}>{title}</H3>
     <TwoColumn>
       {children}
     </TwoColumn>
@@ -28,9 +28,11 @@ class Projects extends Component {
     return (
       <div class="portfolio-page" style={{background: "white", color: "black"}}>
         <div class='portfolio-container' role="main">
-          <H1>Projects</H1>
-          <H2>This is a collection of the personal projects I’ve built. Most recently I’ve been interested in twitter bots and machine learning.</H2>
-          
+          <div>
+            <H1>Projects</H1>
+            <H4 mb={2}>This is a collection of the personal projects I’ve built. Most recently I’ve been interested in twitter bots and machine learning.</H4>
+          </div>
+
           <ProjectSection title='Twitter Bots'>
             <ProjectCard
               title='Gender Diversity in Movies (Aug. 2017)'
@@ -184,12 +186,12 @@ class Projects extends Component {
               ariaDescription='Instagram'
               url='https://www.instagram.com/jmahabal/'
               imageDescription='sf downtown buildings'
-              imageUrl='static/portfolio-photos/resized/thepalaca.jpg'
+              imageUrl='static/portfolio-photos/resized/thepalace.jpg'
             />
           </ProjectSection>
 
           <div class="to-home">
-            <Link to="/resume"><button>To Resume</button></Link>
+            <Link to="/">Home</Link>
           </div>
 
         </div>
