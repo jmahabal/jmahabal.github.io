@@ -16,6 +16,7 @@ class ProjectCard extends Component {
     super(props);
   }
 
+  // TODO: pass in date created instead
   render() {
     return (
       <Card>

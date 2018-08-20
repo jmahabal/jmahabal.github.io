@@ -4,6 +4,10 @@ const sansserif = `"Asap", sans-serif`;
 const serif = `"Tangerine", serif`;
 const monospace = `"Inconsalata", monospace`;
 
+const maxTextWidth = `65ch`;
+
+const baseText = '';
+
 const typography = ``;
 
 const H1 = styled.h1`
