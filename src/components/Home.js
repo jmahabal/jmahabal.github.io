@@ -6,6 +6,7 @@ const HistoryItem = ({children}) => (
     <H4 mt={3} mb={3}>{children}</H4>
 )
 
+// TODO: move to utils folder
 const SocialIcon = (icon) => {
     switch (icon) {
         case 'github':
