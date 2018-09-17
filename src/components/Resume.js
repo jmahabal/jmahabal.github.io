@@ -10,8 +10,7 @@ class Resume extends Component {
   render() {
     return (
       <div>
-        Resume.
-        <Link to="/"><button>Back Home</button></Link>
+        <img alt={this.props.imageDescription} src='./public/resume/resume_jaymahabal.jpg' />
       </div>
     )
   }

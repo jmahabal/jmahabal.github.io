@@ -11,8 +11,9 @@ const Text = styled.span`
     font-weight: normal;
     margin: 0;
     font-family: ${sansserif};
-    line-height: 1.25;
+    line-height: 1.4;
     max-width: ${maxTextWidth};
+    display: inherit;
     ${space};
 `;
 

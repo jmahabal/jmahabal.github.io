@@ -1,9 +1,16 @@
 const HtmlWebPackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 
 const htmlPlugin = new HtmlWebPackPlugin({
   template: "./src/index.html",
   filename: "./index.html"
 });
+
+
+const copyWebpackPlugin = new CopyWebpackPlugin([{ from: 'src/public/', to: 'public/' }]);
+
+// TODO: convert resume.pdf -> resume.jpg
+// TODO: convert full-size photos to resized versions
 
 module.exports = {
   module: {
@@ -21,8 +28,12 @@ module.exports = {
         use: {
           loader: "babel-loader"
         }
+      },
+      {
+        test: /\.(jpg|png|gif)$/,
+        loaders: ['file-loader'],
       }
     ]
   },
-  plugins: [htmlPlugin]
+  plugins: [htmlPlugin, copyWebpackPlugin]
 };

@@ -11,7 +11,7 @@ const toKebabCase = (word) => {
 
 const ProjectSection = ({title, children}) => (
   <div>
-    <H3 id={toKebabCase(title)} mt={4} mb={2}>{title}</H3>
+    <H3 id={toKebabCase(title)} mt={5} mb={3}>{title}</H3>
     <TwoColumn>
       {children}
     </TwoColumn>
@@ -26,7 +26,7 @@ class Projects extends Component {
 
   render() {
     return (
-      <div class="portfolio-page" style={{background: "white", color: "black"}}>
+      <div class="portfolio-page">
         <div class='portfolio-container' role="main">
           <div>
             <H1>Projects</H1>
@@ -40,7 +40,7 @@ class Projects extends Component {
               ariaDescription='Gender Diversity in Movies'
               url='https://twitter.com/moviediversity'
               imageDescription='bar chart of gender breakdown'
-              imageUrl='static/portfolio-photos/resized/dunkirk.jpg'
+              imageUrl='dunkirk'
             />
             <ProjectCard
               title='Wojbomb Predictor (July 2017)'
@@ -54,7 +54,7 @@ class Projects extends Component {
               ariaDescription='Generated San Francisco Neighborhoods'
               url='https://twitter.com/somisspo'
               imageDescription='map of labelling a fake sf neighborhood'
-              imageUrl='static/portfolio-photos/resized/somisspo.jpg'
+              imageUrl='somisspo'
             />        
           </ProjectSection>
 
@@ -65,7 +65,7 @@ class Projects extends Component {
               ariaDescription='Abhivyakti'
               url='https://abhivyakti.org'
               imageDescription='two women talking to each other'
-              imageUrl='static/portfolio-photos/resized/abhivyakti.jpg'
+              imageUrl='abhivyakti'
             />
             <ProjectCard
               title='Valerie Law (Feb. 2018)'
@@ -73,7 +73,7 @@ class Projects extends Component {
               ariaDescription='Valerie Law'
               url='http://www.vlrrth.org'
               imageDescription='a woman standing in a greenhouse'
-              imageUrl='static/portfolio-photos/resized/val.jpg'
+              imageUrl='val'
             />
           </ProjectSection>
 
@@ -84,7 +84,7 @@ class Projects extends Component {
               ariaDescription='Movie Diversity CLI'
               url='https://github.com/jmahabal/movie-diversity-cli'
               imageDescription='a bar chart made up of emojis'
-              imageUrl='static/portfolio-photos/resized/coco.jpg'
+              imageUrl='coco'
             />
             <ProjectCard
               title='“Don’t Call Me Iggy” Reddit Bot (Apr. 2018)'
@@ -98,7 +98,7 @@ class Projects extends Component {
               ariaDescription='SMS-Based Grocery List'
               url='https://medium.com/@jaymahabal/weekend-project-building-an-sms-based-grocery-list-using-twilio-and-firebase-435feb0b3395'
               imageDescription='text conversation with the bot'
-              imageUrl='static/portfolio-photos/resized/grocerylist.jpg'
+              imageUrl='grocerylist'
             />
           </ProjectSection>
 
@@ -109,7 +109,7 @@ class Projects extends Component {
               ariaDescription='Emoji Map'
               url='http://www.mahabal.io/emoji'
               imageDescription='a gridmap of emojis of the bay area'
-              imageUrl='static/portfolio-photos/resized/emojimap.jpg'
+              imageUrl='emojimap'
             />
             <ProjectCard
               title='Travel Paths of CFB Teams (Jan. 2017)'
@@ -117,7 +117,7 @@ class Projects extends Component {
               ariaDescription='Travel Paths of CFB Teams Map'
               url='http://www.mahabal.io/cfbmap'
               imageDescription='a map of flight paths of cfb teams'
-              imageUrl='static/portfolio-photos/resized/cfbmap.jpg'
+              imageUrl='cfbmap'
             />
             <ProjectCard
               title='California Students Stay Close to Home (Dec. 2013)'
@@ -125,7 +125,7 @@ class Projects extends Component {
               ariaDescription='California Students Stay Close to Home Map'
               url='http://www.mahabal.io/static/location/jay_final_project.pdf'
               imageDescription='a choropleth of california counties'
-              imageUrl='static/portfolio-photos/resized/uc.jpg'
+              imageUrl='uc'
             />
           </ProjectSection>
 
@@ -136,7 +136,7 @@ class Projects extends Component {
               ariaDescription='Examining Your Data Visualization'
               url='http://bl.ocks.org/jmahabal/raw/8f010c62112dec083b559cb047a51048/'
               imageDescription='a scatterplot with a trend line'
-              imageUrl='static/portfolio-photos/resized/examine-data.jpg'
+              imageUrl='examine-data'
             />
             <ProjectCard
               title='The Sieve of Eratosthenes (July 2016)'
@@ -144,7 +144,7 @@ class Projects extends Component {
               ariaDescription='The Sieve of Eratosthenes Visualization'
               url='http://www.mahabal.io/eras'
               imageDescription='a grid of numbers, some highlighted'
-              imageUrl='static/portfolio-photos/resized/erat.jpg'
+              imageUrl='erat'
             />
             <ProjectCard
               title='/r/NBA Survey (June 2017)'
@@ -152,7 +152,7 @@ class Projects extends Component {
               ariaDescription='/r/NBA User Survey Visualization'
               url='https://nba.surge.sh/'
               imageDescription='a heatmap'
-              imageUrl='static/portfolio-photos/resized/rnba.jpg'
+              imageUrl='rnba'
             />
             <ProjectCard
               title='NBA Margin of Victory (Feb. 2017)'
@@ -160,7 +160,7 @@ class Projects extends Component {
               ariaDescription='NBA Margin of Victory Visualization'
               url='https://bl.ocks.org/jmahabal/raw/cbc14c78e392cdccc96bb222697a3716/'
               imageDescription='a bar chart of the margins of victory for the gsw'
-              imageUrl='static/portfolio-photos/resized/mov.jpg'
+              imageUrl='mov'
             />
           </ProjectSection>
 
@@ -171,7 +171,7 @@ class Projects extends Component {
               ariaDescription='Iceland Blog'
               url='http://iceland.surge.sh'
               imageDescription='a rift in iceland'
-              imageUrl='static/portfolio-photos/resized/oxararfoss.jpg'
+              imageUrl='oxararfoss'
             />
             <ProjectCard
               title='Phono del Sol (July 2016)'
@@ -179,14 +179,14 @@ class Projects extends Component {
               ariaDescription='Phono del Sol Photos'
               url='http://berkeleybside.com/indie-music-and-food-festival-phono-del-sol-leaves-patrons-happy-waiting-for-next-year/'
               imageDescription='a woman singing with a guitar'
-              imageUrl='static/portfolio-photos/resized/phonodelsol.jpg'
+              imageUrl='phonodelsol'
             />
             <ProjectCard
               title='Instagram (ongoing)'
               ariaDescription='Instagram'
               url='https://www.instagram.com/jmahabal/'
               imageDescription='sf downtown buildings'
-              imageUrl='static/portfolio-photos/resized/thepalace.jpg'
+              imageUrl='thepalace'
             />
           </ProjectSection>
 
