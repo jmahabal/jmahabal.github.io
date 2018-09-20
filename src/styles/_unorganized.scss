@@ -16,26 +16,24 @@ body {
 
 .description-container {
   padding: 2em 2em;
+  color: white;
 }
 
 #links {
   text-align: center;
   font-size: 1.25em;
   padding: 16px;
-  a {
-    color: black;
-  }
 }
 
 a:not(.icon) {
-  color: black;
+  color: white;
 }
 
 a:hover {
   color: black;
   border-bottom: 0px solid #ecf0f1;
   text-decoration: none;
-  background-color: pink;
+  background-color: #ecf0f1;
 }
 
 a:hover svg {
@@ -52,7 +50,7 @@ a:hover svg {
   height: 24px;
   width: 24px;
   margin: 12px;
-  fill: #111;
+  fill: white;
 }
 
 .swing-below {

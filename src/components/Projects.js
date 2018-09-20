@@ -26,8 +26,8 @@ class Projects extends Component {
 
   render() {
     return (
-      <div class="portfolio-page">
-        <div class='portfolio-container' role="main">
+      <div className="portfolio-page">
+        <div className='portfolio-container' role="main">
           <div>
             <H1>Projects</H1>
             <H4 mb={2}>This is a collection of the personal projects I’ve built. Most recently I’ve been interested in twitter bots and machine learning.</H4>
@@ -35,7 +35,8 @@ class Projects extends Component {
 
           <ProjectSection title='Twitter Bots'>
             <ProjectCard
-              title='Gender Diversity in Movies (Aug. 2017)'
+              title='Gender Diversity in Movies'
+              date='Aug. 2017'
               description='On a movie’s release date this bot posts a bar chart of the cast member breakdown by gender. People can also request a specific movie by @-ing the bot with the title.'
               ariaDescription='Gender Diversity in Movies'
               url='https://twitter.com/moviediversity'
@@ -43,13 +44,15 @@ class Projects extends Component {
               imageUrl='dunkirk'
             />
             <ProjectCard
-              title='Wojbomb Predictor (July 2017)'
+              title='Wojbomb Predictor'
+              date='July 2017'
               description='Adrian Wojnarowski is a prominent basketball reporter known for breaking news. This bot uses Woj’s past tweets to generate a model that can predict the popularity of any of news he breaks, useful for only being updated on the truly important stuff.'
               ariaDescription='Wojbomb Predictor'
               url='https://twitter.com/wojbombdetector'
             />
             <ProjectCard
-              title='Generated San Francisco Neighborhoods (June 2017)'
+              title='Generated San Francisco Neighborhoods'
+              date='June 2017'
               description='Realtors will sometimes rename less-desirable neighborhoods (such as KoNo for Koreatown Northgate) in order to attract more buyers. This bot generates a portmanteau’d new neighborhood in San Francisco and then maps its location.'
               ariaDescription='Generated San Francisco Neighborhoods'
               url='https://twitter.com/somisspo'
@@ -60,7 +63,8 @@ class Projects extends Component {
 
           <ProjectSection title='Websites'>
             <ProjectCard
-              title='Abhivyakti (March 2018)'
+              title='Abhivyakti'
+              date='March 2018'
               description='I designed and built the website for Abhivyakti, a Los Angeles-based Marathi theater group. The site is a JAMstack application built in Vue with Contentful as the content repository.'
               ariaDescription='Abhivyakti'
               url='https://abhivyakti.org'
@@ -68,7 +72,8 @@ class Projects extends Component {
               imageUrl='abhivyakti'
             />
             <ProjectCard
-              title='Valerie Law (Feb. 2018)'
+              title='Valerie Law'
+              date='Feb. 2018'
               description='I designed and built Valerie’s personal website, including setting up the domain and deployment pipeline.'
               ariaDescription='Valerie Law'
               url='http://www.vlrrth.org'
@@ -79,7 +84,8 @@ class Projects extends Component {
 
           <ProjectSection title='Other Technology'>
             <ProjectCard
-              title='Movie Diversity CLI (Apr. 2018)'
+              title='Movie Diversity CLI'
+              date='Apr. 2018'
               description='I built a command-line tool that outputs the breakdown by gender of a given movie’s cast.'
               ariaDescription='Movie Diversity CLI'
               url='https://github.com/jmahabal/movie-diversity-cli'
@@ -87,18 +93,27 @@ class Projects extends Component {
               imageUrl='coco'
             />
             <ProjectCard
-              title='“Don’t Call Me Iggy” Reddit Bot (Apr. 2018)'
+              title='“Don’t Call Me Iggy” Reddit Bot'
+              date='April 2018'
               description='Fans sometimes call Andre Iguodala “Iggy”, a name he doesn’t really care for. This bot reminds posters on Reddit that they should try to pick an alternative nickname.'
               ariaDescription='Don’t Call Me Iggy'
               url='https://www.reddit.com/u/dont-call-me-iggy'
             />
             <ProjectCard
-              title='SMS-Based Grocery List (Oct. 2017)'
+              title='SMS-Based Grocery List'
+              date='Oct. 2017'
               description='I used Twilio and Firebase to create a grocery list application. My roommates and I can all text a phone number and work off of the same editable list.'
               ariaDescription='SMS-Based Grocery List'
               url='https://medium.com/@jaymahabal/weekend-project-building-an-sms-based-grocery-list-using-twilio-and-firebase-435feb0b3395'
               imageDescription='text conversation with the bot'
               imageUrl='grocerylist'
+            />
+            <ProjectCard
+              title='Ten click challenge'
+              date='Sept. 2018'
+              description='Dril'
+              ariaDescription='Dril'
+              url='https://chrome.google.com/webstore/detail/ten-click-challenge/dbfeaehamelnbignfbphhkiogdicfbjh'
             />
           </ProjectSection>
 
@@ -190,7 +205,7 @@ class Projects extends Component {
             />
           </ProjectSection>
 
-          <div class="to-home">
+          <div className="to-home">
             <Link to="/">Home</Link>
           </div>
 
