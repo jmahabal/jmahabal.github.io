@@ -1,16 +1,16 @@
 import styled from 'styled-components';
 import { space } from 'styled-system';
 
-const sansserif = `"Asap", sans-serif`;
-const serif = `"Tangerine", serif`;
-const monospace = `"Inconsalata", monospace`;
+const sansserif = `Roboto, sans-serif`;
+const serif = `Tangerine, serif`;
+const monospace = `Inconsolata, monospace`;
 
-const maxTextWidth = `45ch`;
+const maxTextWidth = `55ch`;
 
 const Text = styled.span`
     font-weight: normal;
     margin: 0;
-    font-family: ${sansserif};
+    font-family: ${props => props.font || sansserif};
     line-height: 1.4;
     max-width: ${maxTextWidth};
     display: inherit;
@@ -39,10 +39,11 @@ const H6 = Text.withComponent('h6').extend`
 
 const P = Text.withComponent('p').extend`
     font-size: 14px;
+    font-family: ${monospace};
 `;
 
 const Span = styled.span`
     ${space};
 `;
 
-export { H1, H2, H3, H4, H6, P, Span }
+export { H1, H2, H3, H4, H6, P, Span, sansserif, serif, monospace }

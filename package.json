@@ -14,6 +14,7 @@
   "author": "jmahabal@gmail.com",
   "license": "ISC",
   "dependencies": {
+    "babel-preset-airbnb": "^2.6.0",
     "copy-webpack-plugin": "^4.5.2",
     "gsap": "^2.0.1",
     "lodash": "^4.17.10",

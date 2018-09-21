@@ -117,7 +117,7 @@ class Projects extends Component {
             />
           </ProjectSection>
 
-          <ProjectSection title='Cartography'>
+          {/* <ProjectSection title='Cartography'>
             <ProjectCard
               title='Emoji Map (Sept. 2016)'
               description='We use mental maps everyday, guiding our journey across space. Locations are not just physical but also emotional. I mapped the Bay Area, condensing the vibrancy and diversity of the city into emoji form.'
@@ -142,27 +142,29 @@ class Projects extends Component {
               imageDescription='a choropleth of california counties'
               imageUrl='uc'
             />
-          </ProjectSection>
+          </ProjectSection> */}
 
           <ProjectSection title='Data Visualization'>
             <ProjectCard
-              title='Examining Your Data (Feb. 2017)'
+              title='Examining Your Data'
+              date='Feb. 2017'
               description='Sometimes your dataset can have hidden patterns. That’s one of the reasons why exploratory data visualization and analysis is necessary.'
               ariaDescription='Examining Your Data Visualization'
               url='http://bl.ocks.org/jmahabal/raw/8f010c62112dec083b559cb047a51048/'
               imageDescription='a scatterplot with a trend line'
               imageUrl='examine-data'
             />
-            <ProjectCard
+            {/* <ProjectCard
               title='The Sieve of Eratosthenes (July 2016)'
               description='One way to find primes numbers is by using an algorithm called the Sieve of Eratosthenes. It was difficult for me to understand at first, so I built this to hopefully make it easier for others.'
               ariaDescription='The Sieve of Eratosthenes Visualization'
               url='http://www.mahabal.io/eras'
               imageDescription='a grid of numbers, some highlighted'
               imageUrl='erat'
-            />
+            /> */}
             <ProjectCard
-              title='/r/NBA Survey (June 2017)'
+              title='/r/NBA Survey'
+              date='June 2017'
               description='I visualized correlations for the 2017 /r/NBA fan survey.'
               ariaDescription='/r/NBA User Survey Visualization'
               url='https://nba.surge.sh/'
@@ -170,7 +172,8 @@ class Projects extends Component {
               imageUrl='rnba'
             />
             <ProjectCard
-              title='NBA Margin of Victory (Feb. 2017)'
+              title='NBA Margin of Victory'
+              date='Feb. 2017'
               description='The Golden State Warriors hadn’t just been winning, they had been winning by huge margins.'
               ariaDescription='NBA Margin of Victory Visualization'
               url='https://bl.ocks.org/jmahabal/raw/cbc14c78e392cdccc96bb222697a3716/'
@@ -181,7 +184,8 @@ class Projects extends Component {
 
           <ProjectSection title='Photography'>
             <ProjectCard
-              title='Iceland (Oct. 2017)'
+              title='Iceland'
+              date='Oct. 2017'
               description='This is a blog post about my visit to Iceland, an amazingly beautiful country. I wrote a helper shell script that allowed me to convert Markdown to HTML, resize photos, and deploy all in one go.'
               ariaDescription='Iceland Blog'
               url='http://iceland.surge.sh'
@@ -189,7 +193,8 @@ class Projects extends Component {
               imageUrl='oxararfoss'
             />
             <ProjectCard
-              title='Phono del Sol (July 2016)'
+              title='Phono del Sol'
+              date='July 2016'
               description='I took photos for the Berkeley B-Side, a Berkeley-based music publication, for Phono del Sol, an annual music festival held in San Francisco.'
               ariaDescription='Phono del Sol Photos'
               url='http://berkeleybside.com/indie-music-and-food-festival-phono-del-sol-leaves-patrons-happy-waiting-for-next-year/'
@@ -197,7 +202,8 @@ class Projects extends Component {
               imageUrl='phonodelsol'
             />
             <ProjectCard
-              title='Instagram (ongoing)'
+              title='Instagram'
+              date='Ongoing'
               ariaDescription='Instagram'
               url='https://www.instagram.com/jmahabal/'
               imageDescription='sf downtown buildings'

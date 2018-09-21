@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { Span, P, H1, H2, H3, H4, H6 } from './ui/Typography';
+import { Span, H1, H4, monospace } from './ui/Typography';
 import { SocialIcon } from './ui/Icons';
 
-
 const HistoryItem = ({children}) => (
-    <H4 mt={3} mb={3}>{children}</H4>
+    <H4 mt={3} mb={3} font={monospace}>{children}</H4>
 )
 
 let initialColorCount = Math.round(Math.random() * 1000, 10);
@@ -54,10 +53,10 @@ class Home extends Component {
                     I’m currently a front-end engineer at <a href="http://www.apple.com/" target="_blank" rel="noopener">Apple</a>.
                 </HistoryItem>
                 <HistoryItem>
-                    I was previously a creative technologist at <a href="http://www.akqa.com/" target="_blank" rel="noopener">AKQA</a>, a data journalist at <a href="http://www.h2o.ai/" target="_blank" rel="noopener">H2O.ai</a>, an intern at the <a href="http://youarehere.cc/" target="_blank" rel="noopener">MIT Media Lab</a>, and a system administrator at the <a href="https://iris.eecs.berkeley.edu//05-helpdesk/" target="_blank" rel="noopener">UC Berkeley EECS Department</a>.
+                    I was previously a creative technologist at <a href="http://www.akqa.com/" target="_blank" rel="noopener">AKQA</a>, a data journalist at <a href="http://www.h2o.ai/" target="_blank" rel="noopener">H2O.ai</a>, and an intern at the <a href="http://youarehere.cc/" target="_blank" rel="noopener">MIT Media Lab</a>.
                 </HistoryItem>
                 <HistoryItem>
-                    I graduated from <a href="http://www.berkeley.edu/" target="_blank" rel="noopener">UC Berkeley</a> in 2016 with a BA in <a href="https://math.berkeley.edu/" target="_blank" rel="noopener">Mathematics</a>, a minor in <a href="https://nature.berkeley.edu/advising/minors/gist" target="_blank" rel="noopener">GIST</a>, a certificate in <a href="http://bcnm.berkeley.edu/" target="_blank" rel="noopener">New Media</a>, and a desire to create great data visualization.
+                    I graduated from <a href="http://www.berkeley.edu/" target="_blank" rel="noopener">UC Berkeley</a> with a Bachelor of Arts in <a href="https://math.berkeley.edu/" target="_blank" rel="noopener">Mathematics</a>, a minor in <a href="https://nature.berkeley.edu/advising/minors/gist" target="_blank" rel="noopener">GIST</a>, a certificate in <a href="http://bcnm.berkeley.edu/" target="_blank" rel="noopener">New Media</a>, and a desire to create great data visualization.
                 </HistoryItem>
                 <HistoryItem>
                     I love to read books, play board games (current favorites are <a href="https://boardgamegeek.com/boardgame/2651/power-grid" target="_blank" rel="noopener">Power Grid</a> & <a href="https://boardgamegeek.com/boardgame/31260/agricola" target="_blank" rel="noopener">Agricola</a>), and take photos.
