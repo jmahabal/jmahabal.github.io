@@ -1,5 +1,16 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { H3 } from './ui/Typography';
+import { Page } from './ui/Grid';
+import styled from 'styled-components';
+
+const ResumeContainer = styled.div`
+  border: 1px black solid;
+`;
+
+const ResumeImage = styled.img`
+  width: 100%;
+`;
 
 class Resume extends Component {
 
@@ -9,9 +20,14 @@ class Resume extends Component {
 
   render() {
     return (
-      <div>
-        <img alt={this.props.imageDescription} src='./public/resume/resume_jaymahabal.jpg' />
-      </div>
+      <Page>
+        <ResumeContainer>
+          <ResumeImage alt={this.props.imageDescription} src='./public/resume/resume_jaymahabal.jpg' />
+        </ResumeContainer>
+        <div className="to-home">
+          <Link to="/">Home</Link>
+        </div>
+      </Page>
     )
   }
 }

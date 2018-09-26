@@ -63,9 +63,9 @@ class Home extends Component {
                 </HistoryItem>
             
                 <div id="links">
-                    <Link to="/projects"><H4>Projects</H4></Link>
+                    <Link to="/projects"><H4 font={monospace}>Projects</H4></Link>
                     <Span pl={3} pr={3}>//</Span>
-                    <Link to="/resume"><H4>Resume</H4></Link>
+                    <Link to="/resume"><H4 font={monospace}>Resume</H4></Link>
                 </div>
                 <div className="swing-below">
                     <a href="https://www.github.com/jmahabal" target="_blank" rel="noopener" className="icon" aria-label="Github">

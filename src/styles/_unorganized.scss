@@ -34,17 +34,19 @@ a:hover {
   border-bottom: 0px solid #ecf0f1;
   text-decoration: none;
   background-color: #ecf0f1;
+  // background: linear-gradient(ivory 0%, rgba(0, 0, 0, 0) 50%);
+  // background: linear-gradient(white 0%,black 100%);
+
 }
 
 a:hover svg {
   fill: black;
 }
 
-// a.icon {
-//   text-decoration: none;
-//   display: inline-block;
-//   height: 48px;
-// }
+a.icon {
+  display: inline-block;
+  height: 48px;
+}
 
 .icon svg {
   height: 24px;

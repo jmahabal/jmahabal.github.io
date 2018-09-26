@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import ProjectCard from './ProjectCard';
 import { H1, H2, H3, H4, H6 } from './ui/Typography';
-import { TwoColumn } from './ui/Grid.js';
+import { TwoColumn, Page } from './ui/Grid.js';
 
 // TODO: move to a utils folder
 const toKebabCase = (word) => {
@@ -26,7 +26,7 @@ class Projects extends Component {
 
   render() {
     return (
-      <div className="portfolio-page">
+      <Page>
         <div className='portfolio-container' role="main">
           <div>
             <H1>Projects</H1>
@@ -216,7 +216,7 @@ class Projects extends Component {
           </div>
 
         </div>
-      </div>
+      </Page>
     )
   }
 }
