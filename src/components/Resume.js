@@ -10,6 +10,7 @@ const ResumeContainer = styled.div`
 
 const ResumeImage = styled.img`
   width: 100%;
+  max-width: 800px;
 `;
 
 class Resume extends Component {
