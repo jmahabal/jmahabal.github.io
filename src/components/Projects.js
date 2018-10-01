@@ -111,8 +111,8 @@ class Projects extends Component {
             <ProjectCard
               title='Ten click challenge'
               date='Sept. 2018'
-              description='Dril'
-              ariaDescription='Dril'
+              description='A Chrome extension that displays the number of times you’ve clicked on anything on Twitter per day. Inspired by Dril.'
+              ariaDescription='Chrome Extension'
               url='https://chrome.google.com/webstore/detail/ten-click-challenge/dbfeaehamelnbignfbphhkiogdicfbjh'
             />
           </ProjectSection>
