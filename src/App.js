@@ -18,11 +18,11 @@ class App extends Component {
 
   render() {
     return (
-      <div>
+      <React.Fragment>
         <Route exact path="/" component={Home} />
         <Route path="/resume" component={Resume} />
         <Route path="/projects" component={Projects} />
-      </div>
+      </React.Fragment>
     )
   }
 }

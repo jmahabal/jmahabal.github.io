@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 import { space } from 'styled-system';
 
-const sansserif = `Roboto, sans-serif`;
-const serif = `Tangerine, serif`;
-const monospace = `Inconsolata, monospace`;
+const sansserif = 'Roboto, sans-serif';
+const serif = 'Tangerine, serif';
+const monospace = 'Inconsolata, monospace';
 
-const maxTextWidth = `55ch`;
+const maxTextWidth = '55ch';
 
 const Text = styled.span`
     font-weight: normal;
@@ -46,4 +46,6 @@ const Span = styled.span`
     ${space};
 `;
 
-export { H1, H2, H3, H4, H6, P, Span, sansserif, serif, monospace }
+export {
+  H1, H2, H3, H4, H6, P, Span, sansserif, serif, monospace,
+};
