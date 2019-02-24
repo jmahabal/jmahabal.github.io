@@ -14,7 +14,7 @@ const sizes = {
   desktop: 992,
   tablet: 768,
   phone: 320,
-}
+};
 
 // Iterate through the sizes and create a media template
 const media = Object.keys(sizes).reduce((acc, label) => {
@@ -22,17 +22,17 @@ const media = Object.keys(sizes).reduce((acc, label) => {
     @media (min-width: ${sizes[label] / 16}em) {
       ${css(...args)}
     }
-  `
-  return acc
-}, {})
+  `;
+  return acc;
+}, {});
 
 const TwoColumn = styled.div`
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(${(breakpoint - 2*desktopGutter - columnGap) / 2}px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(${(breakpoint - 2 * desktopGutter - columnGap) / 2}px, 1fr));
     grid-column-gap: ${columnGap}px;
     grid-row-gap: ${rowGap}px;
     ${space};
-`;  
+`;
 
 const Page = styled.div`
   grid-template-columns: minmax(auto, 800px);
@@ -41,4 +41,4 @@ const Page = styled.div`
   ${media.desktop`padding: 4em 1em;`}
 `;
 
-export { Page, TwoColumn }
+export { Page, TwoColumn };

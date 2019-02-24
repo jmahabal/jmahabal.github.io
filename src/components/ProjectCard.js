@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { H4, P } from './ui/Typography';
 import { Card } from './ui/Cards';
@@ -17,32 +17,39 @@ const FillerImage = styled.div`
 
 const imageUrlBuilder = name => `./public/portfolio/resized/${name}.jpg`;
 
-class ProjectCard extends Component {
+const ProjectCard = (props) => {
   // TODO: pass in date created instead
-  render() {
-    return (
-      <Card mb={3}>
-        <H4 mb={3}>{this.props.title}</H4>
-        <a
-          className="portfolio-item"
-          href={this.props.url}
-          target="_blank"
-          rel="noopener"
-          aria-label={this.props.ariaDescription}
-        >
-          {this.props.imageUrl ? (
-            <img
-              alt={this.props.imageDescription}
-              src={imageUrlBuilder(this.props.imageUrl)}
-            />
-          ) : (
-            <FillerImage />
-          )}
-        </a>
-        <P mt={3}>{this.props.description}</P>
-      </Card>
-    );
-  }
-}
+  const {
+    url,
+    title,
+    ariaDescription,
+    imageUrl,
+    imageDescription,
+    description,
+  } = props;
+
+  return (
+    <Card mb={3}>
+      <H4 mb={3}>{title}</H4>
+      <a
+        className="portfolio-item"
+        href={url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={ariaDescription}
+      >
+        {imageUrl ? (
+          <img
+            alt={imageDescription}
+            src={imageUrlBuilder(imageUrl)}
+          />
+        ) : (
+          <FillerImage />
+        )}
+      </a>
+      <P mt={3}>{description}</P>
+    </Card>
+  );
+};
 
 export default ProjectCard;
