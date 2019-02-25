@@ -1,9 +1,9 @@
+const path = require('path');
 const HtmlWebPackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const htmlPlugin = new HtmlWebPackPlugin({
-  template: './src/index.html',
-  filename: './index.html'
+  template: './src/index.html'
 });
 
 
@@ -13,6 +13,7 @@ const copyWebpackPlugin = new CopyWebpackPlugin([{ from: 'src/public/', to: 'pub
 // TODO: convert full-size photos to resized versions
 
 module.exports = {
+  entry: './src/index.js',
   module: {
     rules: [
       {
