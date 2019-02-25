@@ -7,7 +7,7 @@ const htmlPlugin = new HtmlWebPackPlugin({
 });
 
 
-const copyWebpackPlugin = new CopyWebpackPlugin([{ from: 'src/public/', to: 'public/' }]);
+const copyWebpackPlugin = new CopyWebpackPlugin([{ from: 'src/public/', to: 'public/' }, { from: 'src/public/_redirects', to: '/' }]);
 
 // TODO: convert resume.pdf -> resume.jpg
 // TODO: convert full-size photos to resized versions

@@ -14,4 +14,6 @@ I love to read books, play board games (current favorites are Power Grid & Agric
 
 ## Website
 
-This website was built using React and is deployed on Github.
+This website was built using React and is deployed on Netlify.
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e15778b8-09cf-429e-bdd1-51d336c3c9c3/deploy-status)](https://app.netlify.com/sites/zen-lovelace-e6f9cd/deploys)
