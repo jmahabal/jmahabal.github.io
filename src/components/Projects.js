@@ -59,6 +59,15 @@ const Projects = () => {
 
         <ProjectSection title="Websites">
           <ProjectCard
+            title="Emoji Map"
+            date="August 2016"
+            description="I created a map made up of emojis that shows San Francisco and the East Bay."
+            ariaDescription="An Emoji Map of San Francisco and the East Bay"
+            url="http://emoji-map.surge.sh/"
+            imageDescription="An Emoji Map of San Francisco and the East Bay"
+            imageUrl="emojimap"
+          />
+          <ProjectCard
             title="Abhivyakti"
             date="March 2018"
             description="I designed and built the website for Abhivyakti, a Los Angeles-based Marathi theater group. The site is a JAMstack application built in Vue with Contentful as the content repository."
