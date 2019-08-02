@@ -104,7 +104,7 @@ const Projects = () => {
             date="April 2018"
             description="Fans sometimes call Andre Iguodala “Iggy”, a name he doesn’t really care for. This bot reminds posters on Reddit that they should try to pick an alternative nickname."
             ariaDescription="Don’t Call Me Iggy"
-            url="https://www.reddit.com/u/dont-call-me-iggy"
+            url="https://www.reddit.com/user/dont-call-me-iggy/?sort=top"
           />
           <ProjectCard
             title="SMS-Based Grocery List"
