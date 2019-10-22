@@ -55,7 +55,7 @@ class Home extends Component {
             I graduated from{' '}<a href="http://www.berkeley.edu/" target="_blank" rel="noopener noreferrer">UC Berkeley</a>{' '}with a Bachelor of Arts in{' '}<a href="https://math.berkeley.edu/" target="_blank" rel="noopener noreferrer">Mathematics</a>, a minor in{' '}<a href="https://nature.berkeley.edu/advising/minors/gist" target="_blank" rel="noopener noreferrer">GIST</a>, a certificate in{' '}<a href="http://bcnm.berkeley.edu/" target="_blank" rel="noopener noreferrer">New Media</a>, and a desire to create great data visualization.
           </HistoryItem>
           <HistoryItem>
-            I love to read books, play board games (current favorites are{' '}<a href="https://boardgamegeek.com/boardgame/2651/power-grid" target="_blank" rel="noopener noreferrer">Power Grid</a>{' '}&{' '}<a href="https://boardgamegeek.com/boardgame/31260/agricola" target="_blank" rel="noopener noreferrer">Agricola</a>), and take photos.
+            I love to <a href='https://www.goodreads.com/user/show/62322015-jay' target="_blank" rel="noopener noreferrer">read books</a>, play board games (current favorites are{' '}<a href="https://boardgamegeek.com/boardgame/2651/power-grid" target="_blank" rel="noopener noreferrer">Power Grid</a>{' '}&{' '}<a href="https://boardgamegeek.com/boardgame/31260/agricola" target="_blank" rel="noopener noreferrer">Agricola</a>), and take photos.
           </HistoryItem>
           <div id="links">
             <Link to="/projects"><H4 font={monospace}>Projects</H4></Link>
