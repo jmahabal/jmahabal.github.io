@@ -1,7 +1,8 @@
-import React from 'react';
-import styled from 'styled-components';
-import { H4, P } from './ui/Typography';
-import { Card } from './ui/Cards';
+import React from 'react'
+import styled from 'styled-components'
+import { H4, P } from './ui/Typography'
+import { Card } from './ui/Cards'
+import { space } from 'styled-system';
 
 const FillerImage = styled.div`
   height: 75px;
@@ -13,24 +14,35 @@ const FillerImage = styled.div`
     #ecf0f1 10px,
     #ecf0f1 20px
   );
-`;
+`
 
-const imageUrlBuilder = name => `./public/portfolio/resized/${name}.jpg`;
+const imageUrlBuilder = name => `./public/portfolio/resized/${name}.jpg`
 
-const ProjectCard = (props) => {
-  // TODO: pass in date created instead
+const TitleContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-column-gap: 8px;
+  align-items: flex-end;
+  ${space};
+`
+
+const ProjectCard = props => {
   const {
     url,
     title,
+    date,
     ariaDescription,
     imageUrl,
     imageDescription,
     description,
-  } = props;
+  } = props
 
   return (
     <Card mb={3}>
-      <H4 mb={3}>{title}</H4>
+      <TitleContainer mb={3}>
+        <H4>{title}</H4>
+        <P>{date}</P>
+      </TitleContainer>
       <a
         className="portfolio-item"
         href={url}
@@ -39,17 +51,14 @@ const ProjectCard = (props) => {
         aria-label={ariaDescription}
       >
         {imageUrl ? (
-          <img
-            alt={imageDescription}
-            src={imageUrlBuilder(imageUrl)}
-          />
+          <img alt={imageDescription} src={imageUrlBuilder(imageUrl)} />
         ) : (
           <FillerImage />
         )}
       </a>
       <P mt={3}>{description}</P>
     </Card>
-  );
-};
+  )
+}
 
-export default ProjectCard;
+export default ProjectCard

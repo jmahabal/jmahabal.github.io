@@ -161,14 +161,15 @@ const Projects = () => {
             imageDescription="a scatterplot with a trend line"
             imageUrl="examine-data"
           />
-          {/* <ProjectCard
-            title='The Sieve of Eratosthenes (July 2016)'
-            description='One way to find primes numbers is by using an algorithm called the Sieve of Eratosthenes. It was difficult for me to understand at first, so I built this to hopefully make it easier for others.'
+          <ProjectCard
+            title='The Sieve of Eratosthenes'
+            date="July 2016"
+            description='One way to find primes numbers is by using an algorithm called the Sieve of Eratosthenes. This visualization shows how much faster it can be.'
             ariaDescription='The Sieve of Eratosthenes Visualization'
-            url='http://www.mahabal.io/eras'
+            url='http://eratosthenes.surge.sh/'
             imageDescription='a grid of numbers, some highlighted'
             imageUrl='erat'
-          /> */}
+          />
           <ProjectCard
             title="/r/NBA Survey"
             date="June 2017"
