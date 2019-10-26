@@ -42,7 +42,7 @@ const Projects = () => {
           <ProjectCard
             title="Wojbomb Predictor"
             date="July 2017"
-            description="Adrian Wojnarowski is a prominent basketball reporter known for breaking news. This bot uses Woj’s past tweets to generate a model that can predict the popularity of any of news he breaks, useful for only being updated on the truly important stuff."
+            description="Adrian Wojnarowski is a prominent basketball reporter known for breaking news. This bot uses Woj’s past tweets to generate a model that can predict the popularity of his tweets, useful for being updated on the truly important stuff."
             ariaDescription="Wojbomb Predictor"
             url="https://twitter.com/wojbombdetector"
           />
