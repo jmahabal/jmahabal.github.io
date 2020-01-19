@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { H4, P } from './ui/Typography'
 import { Card } from './ui/Cards'
-import { space } from 'styled-system';
+import { space } from 'styled-system'
 
 const FillerImage = styled.div`
   height: 75px;

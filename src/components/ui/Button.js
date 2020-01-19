@@ -1,8 +1,8 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Button = styled.button`
   padding: 2em;
   outline: none;
-`;
+`
 
-export { Button };
+export { Button }

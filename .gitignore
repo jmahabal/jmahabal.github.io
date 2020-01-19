@@ -1,5 +1,5 @@
 dist
-portfolio-photos
+src/public/portfolio/original
 .DS_Store
 
 # Created by https://www.gitignore.io/api/node
