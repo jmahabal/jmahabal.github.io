@@ -1,4 +1,4 @@
-initial_folder="portfolio-photos/original" # You can use "." to target the folder in which you are running the script for example
+initial_folder="src/public/portfolio/original" # You can use "." to target the folder in which you are running the script for example
 resized_folder_name="../resized"
 
 all_images=$(find -E $initial_folder -iregex ".*\.(jpg|gif|png|jpeg)")

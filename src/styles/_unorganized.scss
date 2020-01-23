@@ -25,30 +25,31 @@ body {
   padding: 16px;
 }
 
-a:not(.icon) {
+.description-container a,
+.links a {
   color: white;
 }
 
-a:hover {
+.description-container a:hover,
+.links a:hover {
   color: black;
   border-bottom: 0px solid #ecf0f1;
   text-decoration: none;
   background-color: #ecf0f1;
   // background: linear-gradient(ivory 0%, rgba(0, 0, 0, 0) 50%);
   // background: linear-gradient(white 0%,black 100%);
-
 }
 
 a:hover svg {
   fill: black;
 }
 
-a.icon {
+a.home-icon {
   display: inline-block;
   height: 48px;
 }
 
-.icon svg {
+.home-icon svg {
   height: 24px;
   width: 24px;
   margin: 12px;
@@ -133,20 +134,26 @@ h1.portfolio-title {
 }
 
 .filler-image {
-  background: repeating-linear-gradient(45deg, #95a5a6, #95a5a6 10px, #ecf0f1 10px, #ecf0f1 20px);
+  background: repeating-linear-gradient(
+    45deg,
+    #95a5a6,
+    #95a5a6 10px,
+    #ecf0f1 10px,
+    #ecf0f1 20px
+  );
 }
 
 .portfolio-item-title {
   text-align: left;
   font-family: $sans-serif;
-  font-size: .9em;
+  font-size: 0.9em;
   margin: 1em auto;
 }
 
 .portfolio-item-text {
   text-align: left;
   font-family: $sans-serif;
-  font-size: .9em;
+  font-size: 0.9em;
   margin: 1em 0 1em 0;
   line-height: 1.4;
   max-width: 60ch;

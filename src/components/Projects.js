@@ -1,24 +1,26 @@
-import React from 'react';
-import { Link } from '@reach/router';
-import ProjectCard from './ProjectCard';
-import {
-  H1, H2, H3, H4, H6,
-} from './ui/Typography';
-import { TwoColumn, Page } from './ui/Grid';
+import React from 'react'
+import ProjectCard from './ProjectCard'
+import { H1, H3, H4 } from './ui/Typography'
+import { TwoColumn, Page } from './ui/Grid'
+import { HomeLink } from './ui/HomeLink'
 
 // TODO: move to a utils folder
-const toKebabCase = word => word.toLowerCase().split(' ').join('-');
+const toKebabCase = word =>
+  word
+    .toLowerCase()
+    .split(' ')
+    .join('-')
 
 const ProjectSection = ({ title, children }) => {
   return (
     <div>
-      <H3 id={toKebabCase(title)} mt={5} mb={3}>{title}</H3>
-      <TwoColumn>
-        {children}
-      </TwoColumn>
+      <H3 id={toKebabCase(title)} mt={5} mb={3}>
+        {title}
+      </H3>
+      <TwoColumn>{children}</TwoColumn>
     </div>
   )
-};
+}
 
 const Projects = () => {
   return (
@@ -26,7 +28,10 @@ const Projects = () => {
       <div className="portfolio-container" role="main">
         <div>
           <H1>Projects</H1>
-          <H4 mb={2}>This is a collection of the personal projects I’ve built. Most recently I’ve been interested in twitter bots and machine learning.</H4>
+          <H4 mb={2}>
+            This is a collection of the personal projects I’ve built. Most
+            recently I’ve been interested in twitter bots and machine learning.
+          </H4>
         </div>
 
         <ProjectSection title="Twitter Bots">
@@ -57,7 +62,7 @@ const Projects = () => {
           />
         </ProjectSection>
 
-        <ProjectSection title="Websites">
+        <ProjectSection title="Cartography">
           <ProjectCard
             title="Emoji Map"
             date="August 2016"
@@ -67,6 +72,9 @@ const Projects = () => {
             imageDescription="An Emoji Map of San Francisco and the East Bay"
             imageUrl="emojimap"
           />
+        </ProjectSection>
+
+        <ProjectSection title="Websites">
           <ProjectCard
             title="Abhivyakti"
             date="March 2018"
@@ -162,13 +170,13 @@ const Projects = () => {
             imageUrl="examine-data"
           />
           <ProjectCard
-            title='The Sieve of Eratosthenes'
+            title="The Sieve of Eratosthenes"
             date="July 2016"
-            description='One way to find primes numbers is by using an algorithm called the Sieve of Eratosthenes. This visualization shows how much faster it can be.'
-            ariaDescription='The Sieve of Eratosthenes Visualization'
-            url='http://eratosthenes.surge.sh/'
-            imageDescription='a grid of numbers, some highlighted'
-            imageUrl='erat'
+            description="One way to find primes numbers is by using an algorithm called the Sieve of Eratosthenes. This visualization shows how much faster it can be."
+            ariaDescription="The Sieve of Eratosthenes Visualization"
+            url="http://eratosthenes.surge.sh/"
+            imageDescription="a grid of numbers, some highlighted"
+            imageUrl="erat"
           />
           <ProjectCard
             title="/r/NBA Survey"
@@ -219,13 +227,10 @@ const Projects = () => {
           />
         </ProjectSection>
 
-        <div className="to-home">
-          <Link to="/">Home</Link>
-        </div>
-
+        <HomeLink />
       </div>
     </Page>
-  );
+  )
 }
 
-export default Projects;
+export default Projects
