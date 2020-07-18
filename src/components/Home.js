@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from '@reach/router'
+import styled from 'styled-components'
 
 import { Span, H1, H4, monospace } from './ui/Typography'
 import { SocialIcon } from './ui/Icons'
@@ -43,9 +44,29 @@ const changeColor = () => {
   // return `linear-gradient(45deg, rgb(0, 160, ${y}), rgb(4, ${x}, 154))`;
 }
 
+const BlushIllutration = styled.img`
+  padding: 2em 0em 2.5em 1em;
+  height: 100%;
+`
+
+const Container = styled.div`
+  max-width: 80ch;
+  display: grid;
+  grid-template-columns: 30ch 1fr;
+  @media only screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    img {
+      display: none;
+    }
+  }
+`
+
 class Home extends Component {
   componentDidMount() {
     document.querySelector('body').style.background = changeColor()
+    console.log(
+      'Thank you to Pablo Stanley at https://blush.design/artists/pablo-stanley for the beautiful illustration.'
+    )
   }
 
   componentWillUnmount() {
@@ -54,7 +75,8 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="box">
+      <Container>
+        <BlushIllutration alt="Hello!" src="./public/jay-wave.png" />
         <div className="description-container" role="main">
           <H1 mb={2}>Hi, I’m Jay.</H1>
           <HistoryItem>
@@ -214,7 +236,7 @@ class Home extends Component {
             </a>
           </div>
         </div>
-      </div>
+      </Container>
     )
   }
 }

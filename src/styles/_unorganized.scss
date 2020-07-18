@@ -10,10 +10,6 @@ body {
   font-family: sans-serif;
 }
 
-.box {
-  max-width: 80ch;
-}
-
 .description-container {
   padding: 2em 2em;
   color: white;
@@ -57,8 +53,9 @@ a.home-icon {
 }
 
 .swing-below {
-  text-align: center;
-  font-size: 1.25em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 // Portfolio Page
