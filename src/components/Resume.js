@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Page } from './ui/Grid'
+import { Page, OneColumn } from './ui/Grid'
 import { HomeLink } from './ui/HomeLink'
 
 const ResumeContainer = styled.div`
@@ -16,13 +16,15 @@ const ResumeImage = styled.img`
 const Resume = ({ imageDescription }) => {
   return (
     <Page>
-      <ResumeContainer>
-        <ResumeImage
-          alt={imageDescription}
-          src="./public/resume/resume_jaymahabal.jpg"
-        />
-      </ResumeContainer>
-      <HomeLink />
+      <OneColumn>
+        <ResumeContainer>
+          <ResumeImage
+            alt={imageDescription}
+            src="./public/resume/resume_jaymahabal.jpg"
+          />
+        </ResumeContainer>
+        <HomeLink />
+      </OneColumn>
     </Page>
   )
 }

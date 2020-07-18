@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from '@reach/router'
 import styled from 'styled-components'
+import { RoughNotation } from 'react-rough-notation'
 
 import { Span, H1, H4, monospace } from './ui/Typography'
 import { SocialIcon } from './ui/Icons'
@@ -10,6 +11,43 @@ const HistoryItem = ({ children }) => (
     {children}
   </H4>
 )
+
+const TextLink = ({ children }) => {
+  const [highlightLink, setHighlightLink] = React.useState(false)
+
+  return (
+    <RoughNotation
+      type="highlight"
+      show={highlightLink}
+      iterations={1}
+      animationDuration={250}
+      onMouseEnter={() => setHighlightLink(true)}
+      onMouseLeave={() => setHighlightLink(false)}
+      color="rgba(230, 126, 34, 1.0)"
+    >
+      {children}
+    </RoughNotation>
+  )
+}
+
+const IconLink = ({ children }) => {
+  const [highlightLink, setHighlightLink] = React.useState(false)
+
+  return (
+    <RoughNotation
+      type="circle"
+      show={highlightLink}
+      iterations={1}
+      animationDuration={250}
+      onMouseEnter={() => setHighlightLink(true)}
+      onMouseLeave={() => setHighlightLink(false)}
+      color="rgba(230, 126, 34, 1.0)"
+      strokeWidth="2"
+    >
+      {children}
+    </RoughNotation>
+  )
+}
 
 const initialColorCount = Math.round(Math.random() * 1000, 10)
 
@@ -49,6 +87,19 @@ const BlushIllutration = styled.img`
   height: 100%;
 `
 
+const Page = styled.div`
+  display: flex;
+  width: 100%;
+  min-height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: sans-serif;
+  background: ${changeColor};
+`
+
 const Container = styled.div`
   max-width: 80ch;
   display: grid;
@@ -61,184 +112,218 @@ const Container = styled.div`
   }
 `
 
-class Home extends Component {
-  componentDidMount() {
-    document.querySelector('body').style.background = changeColor()
+const Home = () => {
+  React.useEffect(() => {
     console.log(
       'Thank you to Pablo Stanley at https://blush.design/artists/pablo-stanley for the beautiful illustration.'
     )
-  }
+  }, [])
 
-  componentWillUnmount() {
-    document.querySelector('body').style.background = null
-  }
-
-  render() {
-    return (
+  return (
+    <Page>
       <Container>
         <BlushIllutration alt="Hello!" src="./public/jay-wave.png" />
         <div className="description-container" role="main">
           <H1 mb={2}>Hi, I’m Jay.</H1>
           <HistoryItem>
             I’m currently a UI engineer at{' '}
-            <a
-              href="https://lattice.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Lattice
-            </a>
+            <TextLink>
+              <a
+                href="https://lattice.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Lattice
+              </a>
+            </TextLink>
             .
           </HistoryItem>
           <HistoryItem>
             I was previously a front-end engineer at{' '}
-            <a
-              href="http://www.apple.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Apple
-            </a>{' '}
+            <TextLink>
+              <a
+                href="http://www.apple.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Apple
+              </a>
+            </TextLink>{' '}
             and before that a creative technologist at{' '}
-            <a
-              href="http://www.akqa.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              AKQA
-            </a>
+            <TextLink>
+              <a
+                href="http://www.akqa.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                AKQA
+              </a>
+            </TextLink>
             .
           </HistoryItem>
           <HistoryItem>
             I graduated from{' '}
-            <a
-              href="http://www.berkeley.edu/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              UC Berkeley
-            </a>{' '}
+            <TextLink>
+              <a
+                href="http://www.berkeley.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                UC Berkeley
+              </a>
+            </TextLink>{' '}
             with a Bachelor of Arts in{' '}
-            <a
-              href="https://math.berkeley.edu/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Mathematics
-            </a>
+            <TextLink>
+              <a
+                href="https://math.berkeley.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Mathematics
+              </a>
+            </TextLink>
             , a minor in{' '}
-            <a
-              href="https://nature.berkeley.edu/advising/minors/gist"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GIST
-            </a>
+            <TextLink>
+              <a
+                href="https://nature.berkeley.edu/advising/minors/gist"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                GIST
+              </a>
+            </TextLink>
             , and a certificate in{' '}
-            <a
-              href="http://bcnm.berkeley.edu/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              New Media
-            </a>
+            <TextLink>
+              <a
+                href="http://bcnm.berkeley.edu/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                New Media
+              </a>
+            </TextLink>
             .
           </HistoryItem>
           <HistoryItem>
             I love to{' '}
-            <a
-              href="https://www.goodreads.com/user/show/62322015-jay"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              read books
-            </a>
+            <TextLink>
+              <a
+                href="https://www.goodreads.com/user/show/62322015-jay"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                read books
+              </a>
+            </TextLink>
             , play board games (current favorites are{' '}
-            <a
-              href="https://boardgamegeek.com/boardgame/68448/7-wonders"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              7 Wonders
-            </a>{' '}
+            <TextLink>
+              <a
+                href="https://boardgamegeek.com/boardgame/68448/7-wonders"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                7 Wonders
+              </a>
+            </TextLink>{' '}
             &{' '}
-            <a
-              href="https://boardgamegeek.com/boardgame/31260/agricola"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Agricola
-            </a>
+            <TextLink>
+              <a
+                href="https://boardgamegeek.com/boardgame/31260/agricola"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Agricola
+              </a>
+            </TextLink>
             ), and take photos.
           </HistoryItem>
           <div id="links">
-            <Link to="/projects">
-              <H4 font={monospace}>Projects</H4>
-            </Link>
+            <TextLink>
+              {' '}
+              <Link to="/projects">
+                <H4 font={monospace}>Projects</H4>
+              </Link>
+            </TextLink>
             <Span pl={3} pr={3}>
               //
             </Span>
-            <Link to="/talks">
-              <H4 font={monospace}>Talks</H4>
-            </Link>
+            <TextLink>
+              {' '}
+              <Link to="/talks">
+                <H4 font={monospace}>Talks</H4>
+              </Link>
+            </TextLink>
             <Span pl={3} pr={3}>
               //
             </Span>
-            <Link to="/resume">
-              <H4 font={monospace}>Resume</H4>
-            </Link>
+            <TextLink>
+              {' '}
+              <Link to="/resume">
+                <H4 font={monospace}>Resume</H4>
+              </Link>
+            </TextLink>
           </div>
           <div className="swing-below">
-            <a
-              href="https://www.github.com/jmahabal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="home-icon"
-              aria-label="Github"
-            >
-              {<SocialIcon icon="github" />}
-            </a>
-            <a
-              href="https://www.linkedin.com/in/jmahabal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="home-icon"
-              aria-label="LinkedIn"
-            >
-              {<SocialIcon icon="linkedin" />}
-            </a>
-            <a
-              href="https://www.instagram.com/jmahabal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="home-icon"
-              aria-label="Instagram"
-            >
-              {<SocialIcon icon="instagram" />}
-            </a>
-            <a
-              href="https://www.twitter.com/jaymahabal"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="home-icon"
-              aria-label="Twitter"
-            >
-              {<SocialIcon icon="twitter" />}
-            </a>
-            <a
-              href="mailto:jmahabal+website@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="home-icon"
-              aria-label="Email"
-            >
-              {<SocialIcon icon="email" />}
-            </a>
+            <IconLink>
+              <a
+                href="https://www.github.com/jmahabal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="home-icon"
+                aria-label="Github"
+              >
+                {<SocialIcon icon="github" />}
+              </a>
+            </IconLink>
+            <IconLink>
+              <a
+                href="https://www.linkedin.com/in/jmahabal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="home-icon"
+                aria-label="LinkedIn"
+              >
+                {<SocialIcon icon="linkedin" />}
+              </a>
+            </IconLink>
+            <IconLink>
+              <a
+                href="https://www.instagram.com/jmahabal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="home-icon"
+                aria-label="Instagram"
+              >
+                {<SocialIcon icon="instagram" />}
+              </a>
+            </IconLink>
+            <IconLink>
+              <a
+                href="https://www.twitter.com/jaymahabal"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="home-icon"
+                aria-label="Twitter"
+              >
+                {<SocialIcon icon="twitter" />}
+              </a>
+            </IconLink>
+            <IconLink>
+              <a
+                href="mailto:jmahabal+website@gmail.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="home-icon"
+                aria-label="Email"
+              >
+                {<SocialIcon icon="email" />}
+              </a>
+            </IconLink>
           </div>
         </div>
       </Container>
-    )
-  }
+    </Page>
+  )
 }
 
 export default Home
