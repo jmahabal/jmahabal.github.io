@@ -37,11 +37,19 @@ const TwoColumn = styled.div`
   ${space};
 `
 
+const OneColumn = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+
 const Page = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
   grid-template-columns: minmax(auto, 800px);
   padding: 1em;
   ${media.tablet`padding: 2em 1em;`}
   ${media.desktop`padding: 4em 1em;`}
 `
 
-export { Page, TwoColumn }
+export { Page, TwoColumn, OneColumn }

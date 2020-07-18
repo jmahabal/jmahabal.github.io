@@ -1,20 +1,21 @@
-// shared variables 
-@import "common/variables";
-@import "common/typography";
-@import "common/colors";
-@import "common/mixins";
+// shared variables
+@import 'common/variables';
+@import 'common/typography';
+@import 'common/colors';
+@import 'common/mixins';
 
 // shared UI components
-@import "ui/ui";
+@import 'ui/ui';
 
 // FIXME: temporary file while figuring out organization
-@import "unorganized";
+@import 'unorganized';
 
 html,
 body {
   margin: 0;
   padding: 0;
   font-size: 16px;
+  font-family: sans-serif;
 }
 
 *,
