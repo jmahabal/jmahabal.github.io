@@ -18,8 +18,6 @@ const browser = Bowser.getParser(window.navigator.userAgent)
 const platformType = browser.getPlatformType()
 const isDesktop = platformType === 'desktop'
 
-console.log({ platformType })
-
 const TextLink = ({ children }) => {
   const prefersReducedMotion = usePrefersReducedMotion()
   const [highlightLink, setHighlightLink] = React.useState(false)
