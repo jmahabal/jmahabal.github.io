@@ -13,10 +13,15 @@ const LinkContainer = styled.div`
     text-decoration: none;
   }
   a svg {
-    transition: 0.25s transform;
+    transform: rotate(180deg);
   }
-  a:hover svg {
-    transform: translateX(-5px) rotate(180deg);
+  @media (prefers-reduced-motion: no-preference) {
+    a svg {
+      transition: 0.25s transform;
+    }
+    a:hover svg {
+      transform: translateX(-5px) rotate(180deg);
+    }
   }
 `
 export const HomeLink = () => {

@@ -1,8 +1,10 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Link } from '@reach/router'
 import styled from 'styled-components'
 import { RoughNotation } from 'react-rough-notation'
+import Bowser from 'bowser'
 
+import { usePrefersReducedMotion } from './utils'
 import { Span, H1, H4, monospace } from './ui/Typography'
 import { SocialIcon } from './ui/Icons'
 
@@ -12,17 +14,24 @@ const HistoryItem = ({ children }) => (
   </H4>
 )
 
+const browser = Bowser.getParser(window.navigator.userAgent)
+const platformType = browser.getPlatformType()
+const isDesktop = platformType === 'desktop'
+
+console.log({ platformType })
+
 const TextLink = ({ children }) => {
+  const prefersReducedMotion = usePrefersReducedMotion()
   const [highlightLink, setHighlightLink] = React.useState(false)
 
   return (
     <RoughNotation
       type="highlight"
-      show={highlightLink}
+      show={prefersReducedMotion ? false : highlightLink}
       iterations={1}
       animationDuration={250}
-      onMouseEnter={() => setHighlightLink(true)}
-      onMouseLeave={() => setHighlightLink(false)}
+      onMouseEnter={() => (isDesktop ? setHighlightLink(true) : null)}
+      onMouseLeave={() => (isDesktop ? setHighlightLink(false) : null)}
       color="rgba(230, 126, 34, 1.0)"
     >
       {children}
@@ -31,16 +40,17 @@ const TextLink = ({ children }) => {
 }
 
 const IconLink = ({ children }) => {
+  const prefersReducedMotion = usePrefersReducedMotion()
   const [highlightLink, setHighlightLink] = React.useState(false)
 
   return (
     <RoughNotation
       type="circle"
-      show={highlightLink}
+      show={prefersReducedMotion ? false : highlightLink}
       iterations={1}
       animationDuration={250}
-      onMouseEnter={() => setHighlightLink(true)}
-      onMouseLeave={() => setHighlightLink(false)}
+      onMouseEnter={() => (isDesktop ? setHighlightLink(true) : null)}
+      onMouseLeave={() => (isDesktop ? setHighlightLink(false) : null)}
       color="rgba(230, 126, 34, 1.0)"
       strokeWidth="2"
     >
@@ -83,8 +93,7 @@ const changeColor = () => {
 }
 
 const BlushIllutration = styled.img`
-  padding: 2em 0em 2.5em 1em;
-  height: 100%;
+  width: 300px;
 `
 
 const Page = styled.div`
@@ -102,14 +111,17 @@ const Page = styled.div`
 
 const Container = styled.div`
   max-width: 80ch;
-  display: grid;
-  grid-template-columns: 30ch 1fr;
+  display: flex;
   @media only screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
     img {
       display: none;
     }
   }
+`
+
+const IllustrationContainer = styled.div`
+  padding-top: 2em;
+  max-width: 250px;
 `
 
 const Home = () => {
@@ -122,7 +134,9 @@ const Home = () => {
   return (
     <Page>
       <Container>
-        <BlushIllutration alt="Hello!" src="./public/jay-wave.png" />
+        <IllustrationContainer>
+          <BlushIllutration alt="Hello!" src="./public/jay-wave.png" />
+        </IllustrationContainer>
         <div className="description-container" role="main">
           <H1 mb={2}>Hi, I’m Jay.</H1>
           <HistoryItem>
