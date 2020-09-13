@@ -91,7 +91,7 @@ const changeColor = () => {
 }
 
 const BlushIllutration = styled.img`
-  width: 300px;
+  height: 500px;
 `
 
 const Page = styled.div`
@@ -118,22 +118,20 @@ const Container = styled.div`
 `
 
 const IllustrationContainer = styled.div`
-  padding-top: 2em;
+  transform: translate(-40px, 15px);
   max-width: 250px;
 `
 
 const Home = () => {
   React.useEffect(() => {
-    console.log(
-      'Thank you to Pablo Stanley at https://blush.design/artists/pablo-stanley for the beautiful illustration.'
-    )
+    console.log('Thank you to Shreeya Wagh for the beautiful illustration.')
   }, [])
 
   return (
     <Page>
       <Container>
         <IllustrationContainer>
-          <BlushIllutration alt="Hello!" src="./public/jay-wave.png" />
+          <BlushIllutration alt="Hello!" src="./public/jay-illus.png" />
         </IllustrationContainer>
         <div className="description-container" role="main">
           <H1 mb={2}>Hi, I’m Jay.</H1>
