@@ -139,7 +139,7 @@ const Home = () => {
             I’m currently a UI engineer at{' '}
             <TextLink>
               <a
-                href="https://lattice.com/"
+                href="https://lattice.com/blog/at-the-end-of-the-day-its-all-about-communicating-effectively-and-elegantly-jay-mahabal-on-building-solutions-for-customers"
                 target="_blank"
                 rel="noopener noreferrer"
               >
