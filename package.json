@@ -17,7 +17,7 @@
     "@reach/router": "^1.2.1",
     "bowser": "^2.10.0",
     "copy-webpack-plugin": "^5.1.1",
-    "lodash": "^4.17.19",
+    "lodash": "^4.17.21",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-rough-notation": "^0.1.1",
