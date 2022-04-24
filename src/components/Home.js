@@ -120,6 +120,7 @@ const Container = styled.div`
 const IllustrationContainer = styled.div`
   transform: translate(-40px, 15px);
   max-width: 250px;
+  height: 500px;
 `
 
 const Home = () => {
@@ -249,25 +250,30 @@ const Home = () => {
           </HistoryItem>
           <div id="links">
             <TextLink>
-              {' '}
               <Link to="/projects">
                 <H4 font={monospace}>Projects</H4>
               </Link>
             </TextLink>
-            <Span pl={3} pr={3}>
-              //
+            <Span pl={2} pr={2}>
+              ·
             </Span>
             <TextLink>
-              {' '}
               <Link to="/talks">
                 <H4 font={monospace}>Talks</H4>
               </Link>
             </TextLink>
-            <Span pl={3} pr={3}>
-              //
+            <Span pl={2} pr={2}>
+              ·
             </Span>
             <TextLink>
-              {' '}
+              <Link to="/writing">
+                <H4 font={monospace}>Writing</H4>
+              </Link>
+            </TextLink>
+            <Span pl={2} pr={2}>
+              ·
+            </Span>
+            <TextLink>
               <Link to="/resume">
                 <H4 font={monospace}>Resume</H4>
               </Link>

@@ -2,10 +2,12 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Router } from '@reach/router'
 
+// TODO: These should be... pages?
 import Home from './components/Home'
 import Resume from './components/Resume'
 import Projects from './components/Projects'
 import Talks from './components/Talks'
+import Writing from './components/Writing'
 import styles from './styles/main.scss'
 
 // for images
@@ -23,6 +25,7 @@ ReactDOM.render(
     <Resume path="/resume" />
     <Projects path="/projects" />
     <Talks path="/talks" />
+    <Writing path="/writing" />
   </Router>,
   document.getElementById('index')
 )
