@@ -3,20 +3,23 @@ import styled from 'styled-components'
 
 import ProjectCard from './ProjectCard'
 import { H1 } from './ui/Typography'
-import { Page, TwoColumn } from './ui/Grid'
+import { Page, TwoColumn, breakpoint } from './ui/Grid'
 import { HomeLink } from './ui/HomeLink'
 
 const Container = styled.div`
   display: grid;
-  grid-row-gap: 40px;
+  gap: 40px;
+  flex-direction: column;
+  width: 100%;
+  max-width: ${breakpoint}px;
 `
 
 const Links = () => {
   return (
     <Page>
-      <TwoColumn>
-        <Container>
-          <H1>Talks</H1>
+      <Container>
+        <H1>Talks</H1>
+        <TwoColumn>
           <ProjectCard
             title="Variable Fonts @ WaffleJS"
             date="Jan. 2020"
@@ -26,9 +29,16 @@ const Links = () => {
             imageDescription="me, presenting, at wafflejs"
             imageUrl="wafflejs"
           />
-          <HomeLink />
-        </Container>
-      </TwoColumn>
+          <ProjectCard
+            title="Eng. <> Product @ ProductTank NYC"
+            date="Sept. 2022"
+            description="Product and engineering work together to solve problems and make the most excellent tech on the market, but when incentives are unclear, what can be a wonderful relationship gets contentious. That's why Product Tank NYC has partnered with the team at Lattice to discuss managing your relationship with your engineering team."
+            ariaDescription="Managing the Engineering and Product Manager Partnership"
+            url="https://www.meetup.com/producttanknyc/events/288182632/"
+          />
+        </TwoColumn>
+        <HomeLink />
+      </Container>
     </Page>
   )
 }

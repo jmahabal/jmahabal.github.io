@@ -1,7 +1,8 @@
 import React from 'react'
+import styled from 'styled-components'
 import ProjectCard from './ProjectCard'
 import { H1, H3, H4 } from './ui/Typography'
-import { TwoColumn, Page } from './ui/Grid'
+import { TwoColumn, Page, breakpoint } from './ui/Grid'
 import { HomeLink } from './ui/HomeLink'
 
 // TODO: move to a utils folder
@@ -10,6 +11,13 @@ const toKebabCase = word =>
     .toLowerCase()
     .split(' ')
     .join('-')
+
+const Container = styled.div`
+  display: grid;
+  flex-direction: column;
+  width: 100%;
+  max-width: ${breakpoint}px;
+`
 
 const ProjectSection = ({ title, children }) => {
   return (
@@ -25,7 +33,7 @@ const ProjectSection = ({ title, children }) => {
 const Projects = () => {
   return (
     <Page>
-      <div className="portfolio-container" role="main">
+      <Container className="portfolio-container" role="main">
         <div>
           <H1>Projects</H1>
           <H4 mb={2}>
@@ -72,6 +80,7 @@ const Projects = () => {
             imageDescription="An Emoji Map of San Francisco and the East Bay"
             imageUrl="emojimap"
           />
+          <div />
         </ProjectSection>
 
         <ProjectSection title="Websites">
@@ -228,7 +237,7 @@ const Projects = () => {
         </ProjectSection>
 
         <HomeLink />
-      </div>
+      </Container>
     </Page>
   )
 }

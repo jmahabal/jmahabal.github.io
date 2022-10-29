@@ -5,7 +5,7 @@ const maxWidth = 1024
 const desktopGutter = 48
 const mobileGutter = 24
 
-const breakpoint = 768
+export const breakpoint = 768
 
 const columnGap = 0.5 * desktopGutter
 const rowGap = 0.5 * desktopGutter
