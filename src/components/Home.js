@@ -137,20 +137,30 @@ const Home = () => {
         <div className="description-container" role="main">
           <H1 mb={2}>Hi, I’m Jay.</H1>
           <HistoryItem>
-            I’m currently a UI engineer at{' '}
+            I’m currently a Design Engineer at{' '}
             <TextLink>
               <a
-                href="https://lattice.com/blog/at-the-end-of-the-day-its-all-about-communicating-effectively-and-elegantly-jay-mahabal-on-building-solutions-for-customers"
+                href="https://www.moderntreasury.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Modern Treasury
+              </a>
+            </TextLink>
+            .
+
+          </HistoryItem>
+          <HistoryItem>
+            I was previously a UI Engineer at{' '}
+            <TextLink>
+              <a
+                href="http://www.lattice.com/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 Lattice
               </a>
-            </TextLink>
-            .
-          </HistoryItem>
-          <HistoryItem>
-            I was previously a front-end engineer at{' '}
+            </TextLink>{' and '}
             <TextLink>
               <a
                 href="http://www.apple.com/"

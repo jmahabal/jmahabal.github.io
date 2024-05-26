@@ -42,6 +42,19 @@ const Projects = () => {
           </H4>
         </div>
 
+        <ProjectSection title="Cartography">
+          <ProjectCard
+            title="Emoji Map"
+            date="August 2016"
+            description="I created a map made up of emojis that shows San Francisco and the East Bay."
+            ariaDescription="An Emoji Map of San Francisco and the East Bay"
+            url="http://emoji-map.surge.sh/"
+            imageDescription="An Emoji Map of San Francisco and the East Bay"
+            imageUrl="emojimap"
+          />
+          <div />
+        </ProjectSection>
+
         <ProjectSection title="Twitter Bots">
           <ProjectCard
             title="Gender Diversity in Movies"
@@ -68,19 +81,6 @@ const Projects = () => {
             imageDescription="map of labelling a fake sf neighborhood"
             imageUrl="somisspo"
           />
-        </ProjectSection>
-
-        <ProjectSection title="Cartography">
-          <ProjectCard
-            title="Emoji Map"
-            date="August 2016"
-            description="I created a map made up of emojis that shows San Francisco and the East Bay."
-            ariaDescription="An Emoji Map of San Francisco and the East Bay"
-            url="http://emoji-map.surge.sh/"
-            imageDescription="An Emoji Map of San Francisco and the East Bay"
-            imageUrl="emojimap"
-          />
-          <div />
         </ProjectSection>
 
         <ProjectSection title="Websites">
