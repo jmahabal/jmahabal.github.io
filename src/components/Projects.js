@@ -38,9 +38,22 @@ const Projects = () => {
           <H1>Projects</H1>
           <H4 mb={2}>
             This is a collection of the personal projects I’ve built. Most
-            recently I’ve been interested in twitter bots and machine learning.
+            recently I’ve been interested in maps, experiential projects, and typography.
           </H4>
         </div>
+
+        <ProjectSection title="IRL">
+          <ProjectCard
+            title="chaitour.nyc"
+            date="Sept. 2022 →"
+            description="I organize a cafe crawl through lower Manhattan for my friends, visiting four cafes that serve chai over the course of a morning."
+            ariaDescription="A map of four chai cafes in lower Manhattan"
+            url="https://chaitour.nyc"
+            imageDescription="A map of four chai cafes in lower Manhattan"
+            imageUrl="chaitour"
+          />
+          <div />
+        </ProjectSection>
 
         <ProjectSection title="Cartography">
           <ProjectCard
@@ -54,119 +67,6 @@ const Projects = () => {
           />
           <div />
         </ProjectSection>
-
-        <ProjectSection title="Twitter Bots">
-          <ProjectCard
-            title="Gender Diversity in Movies"
-            date="Aug. 2017"
-            description="On a movie’s release date this bot posts a bar chart of the cast member breakdown by gender. People can also request a specific movie by @-ing the bot with the title."
-            ariaDescription="Gender Diversity in Movies"
-            url="https://twitter.com/moviediversity"
-            imageDescription="bar chart of gender breakdown"
-            imageUrl="dunkirk"
-          />
-          <ProjectCard
-            title="Wojbomb Predictor"
-            date="July 2017"
-            description="Adrian Wojnarowski is a prominent basketball reporter known for breaking news. This bot uses Woj’s past tweets to generate a model that can predict the popularity of his tweets, useful for being updated on the truly important stuff."
-            ariaDescription="Wojbomb Predictor"
-            url="https://twitter.com/wojbombdetector"
-          />
-          <ProjectCard
-            title="Generated San Francisco Neighborhoods"
-            date="June 2017"
-            description="Realtors will sometimes rename less-desirable neighborhoods (such as KoNo for Koreatown Northgate) in order to attract more buyers. This bot generates a portmanteau’d new neighborhood in San Francisco and then maps its location."
-            ariaDescription="Generated San Francisco Neighborhoods"
-            url="https://twitter.com/somisspo"
-            imageDescription="map of labelling a fake sf neighborhood"
-            imageUrl="somisspo"
-          />
-        </ProjectSection>
-
-        <ProjectSection title="Websites">
-          <ProjectCard
-            title="Abhivyakti"
-            date="March 2018"
-            description="I designed and built the website for Abhivyakti, a Los Angeles-based Marathi theater group. The site is a JAMstack application built in Vue with Contentful as the content repository."
-            ariaDescription="Abhivyakti"
-            url="https://abhivyakti.org"
-            imageDescription="two women talking to each other"
-            imageUrl="abhivyakti"
-          />
-          <ProjectCard
-            title="Valerie Law"
-            date="Feb. 2018"
-            description="I designed and built Valerie’s personal website, including setting up the domain and deployment pipeline."
-            ariaDescription="Valerie Law"
-            url="http://www.valerie.surge.sh"
-            // old url
-            // url="http://www.vlrrth.org"
-            imageDescription="a woman standing in a greenhouse"
-            imageUrl="val"
-          />
-        </ProjectSection>
-
-        <ProjectSection title="Other Technology">
-          <ProjectCard
-            title="Movie Diversity CLI"
-            date="Apr. 2018"
-            description="I built a command-line tool that outputs the breakdown by gender of a given movie’s cast."
-            ariaDescription="Movie Diversity CLI"
-            url="https://github.com/jmahabal/movie-diversity-cli"
-            imageDescription="a bar chart made up of emojis"
-            imageUrl="coco"
-          />
-          <ProjectCard
-            title="“Don’t Call Me Iggy” Reddit Bot"
-            date="April 2018"
-            description="Fans sometimes call Andre Iguodala “Iggy”, a name he doesn’t really care for. This bot reminds posters on Reddit that they should try to pick an alternative nickname."
-            ariaDescription="Don’t Call Me Iggy"
-            url="https://www.reddit.com/user/dont-call-me-iggy/?sort=top"
-          />
-          <ProjectCard
-            title="SMS-Based Grocery List"
-            date="Oct. 2017"
-            description="I used Twilio and Firebase to create a grocery list application. My roommates and I can all text a phone number and work off of the same editable list."
-            ariaDescription="SMS-Based Grocery List"
-            url="https://medium.com/@jaymahabal/weekend-project-building-an-sms-based-grocery-list-using-twilio-and-firebase-435feb0b3395"
-            imageDescription="text conversation with the bot"
-            imageUrl="grocerylist"
-          />
-          <ProjectCard
-            title="Ten click challenge"
-            date="Sept. 2018"
-            description="A Chrome extension that displays the number of times you’ve clicked on anything on Twitter per day. Inspired by Dril."
-            ariaDescription="Chrome Extension"
-            url="https://chrome.google.com/webstore/detail/ten-click-challenge/dbfeaehamelnbignfbphhkiogdicfbjh"
-          />
-        </ProjectSection>
-
-        {/* <ProjectSection title='Cartography'>
-          <ProjectCard
-            title='Emoji Map (Sept. 2016)'
-            description='We use mental maps everyday, guiding our journey across space. Locations are not just physical but also emotional. I mapped the Bay Area, condensing the vibrancy and diversity of the city into emoji form.'
-            ariaDescription='Emoji Map'
-            url='http://www.mahabal.io/emoji'
-            imageDescription='a gridmap of emojis of the bay area'
-            imageUrl='emojimap'
-          />
-          <ProjectCard
-            title='Travel Paths of CFB Teams (Jan. 2017)'
-            description='While they don’t always literally fly, the flight paths college football teams make a beautiful spiderweb over the country.'
-            ariaDescription='Travel Paths of CFB Teams Map'
-            url='http://www.mahabal.io/cfbmap'
-            imageDescription='a map of flight paths of cfb teams'
-            imageUrl='cfbmap'
-          />
-          <ProjectCard
-            title='California Students Stay Close to Home (Dec. 2013)'
-            description='With the exception of UCLA and UC Berkeley, the home county of each University of California campus sent the majority of its UC-attending students there; students tend to stay near home.'
-            ariaDescription='California Students Stay Close to Home Map'
-            url='http://www.mahabal.io/static/location/jay_final_project.pdf'
-            imageDescription='a choropleth of california counties'
-            imageUrl='uc'
-          />
-        </ProjectSection> */}
 
         <ProjectSection title="Data Visualization">
           <ProjectCard
@@ -206,6 +106,111 @@ const Projects = () => {
             imageUrl="mov"
           />
         </ProjectSection>
+
+        <ProjectSection title="Websites">
+          <ProjectCard
+            title="Abhivyakti"
+            date="March 2018"
+            description="I designed and built the website for Abhivyakti, a Los Angeles-based Marathi theater group. The site is a JAMstack application built in Vue with Contentful as the content repository."
+            ariaDescription="Abhivyakti"
+            url="https://abhivyakti.org"
+            imageDescription="two women talking to each other"
+            imageUrl="abhivyakti"
+          />
+          <ProjectCard
+            title="Valerie Law"
+            date="Feb. 2018"
+            description="I designed and built Valerie’s personal website, including setting up the domain and deployment pipeline."
+            ariaDescription="Valerie Law"
+            url="http://www.valerie.surge.sh"
+            // old url
+            // url="http://www.vlrrth.org"
+            imageDescription="a woman standing in a greenhouse"
+            imageUrl="val"
+          />
+        </ProjectSection>
+
+        <ProjectSection title="Twitter Bots">
+          {/* <ProjectCard
+            title="Gender Diversity in Movies"
+            date="Aug. 2017"
+            description="On a movie’s release date this bot posts a bar chart of the cast member breakdown by gender. People can also request a specific movie by @-ing the bot with the title."
+            ariaDescription="Gender Diversity in Movies"
+            url="https://twitter.com/moviediversity"
+            imageDescription="bar chart of gender breakdown"
+            imageUrl="dunkirk"
+          /> */}
+          <ProjectCard
+            title="Generated SF Neighborhoods"
+            date="June 2017"
+            description="Realtors will sometimes rename less-desirable neighborhoods (such as KoNo for Koreatown Northgate) in order to attract more buyers. This bot generates a portmanteau’d new neighborhood in San Francisco and then maps its location."
+            ariaDescription="Generated San Francisco Neighborhoods"
+            url="https://twitter.com/somisspo"
+            imageDescription="map of labelling a fake sf neighborhood"
+            imageUrl="somisspo"
+          />
+          <ProjectCard
+            title="Wojbomb Predictor"
+            date="July 2017"
+            description="Adrian Wojnarowski is a prominent basketball reporter known for breaking news. This bot uses Woj’s past tweets to generate a model that can predict the popularity of his tweets, useful for being updated on the truly important stuff."
+            ariaDescription="Wojbomb Predictor"
+            url="https://twitter.com/wojbombdetector"
+          />
+        </ProjectSection>
+
+        <ProjectSection title="Other Technology">
+          <ProjectCard
+            title="Movie Diversity CLI"
+            date="Apr. 2018"
+            description="I built a command-line tool that outputs the breakdown by gender of a given movie’s cast."
+            ariaDescription="Movie Diversity CLI"
+            url="https://github.com/jmahabal/movie-diversity-cli"
+            imageDescription="a bar chart made up of emojis"
+            imageUrl="coco"
+          />
+          <ProjectCard
+            title="SMS-Based Grocery List"
+            date="Oct. 2017"
+            description="I used Twilio and Firebase to create a grocery list application. My roommates and I can all text a phone number and work off of the same editable list."
+            ariaDescription="SMS-Based Grocery List"
+            url="https://medium.com/@jaymahabal/weekend-project-building-an-sms-based-grocery-list-using-twilio-and-firebase-435feb0b3395"
+            imageDescription="text conversation with the bot"
+            imageUrl="grocerylist"
+          />
+          <ProjectCard
+            title="“Don’t Call Me Iggy” Reddit Bot"
+            date="April 2018"
+            description="Fans sometimes call Andre Iguodala “Iggy”, a name he doesn’t really care for. This bot reminds posters on Reddit that they should try to pick an alternative nickname."
+            ariaDescription="Don’t Call Me Iggy"
+            url="https://www.reddit.com/user/dont-call-me-iggy/?sort=top"
+          />
+          <ProjectCard
+            title="Ten click challenge"
+            date="Sept. 2018"
+            description="A Chrome extension that displays the number of times you’ve clicked on anything on Twitter per day. Inspired by Dril."
+            ariaDescription="Chrome Extension"
+            url="https://chrome.google.com/webstore/detail/ten-click-challenge/dbfeaehamelnbignfbphhkiogdicfbjh"
+          />
+        </ProjectSection>
+
+        {/* <ProjectSection title='Cartography'>
+          <ProjectCard
+            title='Travel Paths of CFB Teams (Jan. 2017)'
+            description='While they don’t always literally fly, the flight paths college football teams make a beautiful spiderweb over the country.'
+            ariaDescription='Travel Paths of CFB Teams Map'
+            url='http://www.mahabal.io/cfbmap'
+            imageDescription='a map of flight paths of cfb teams'
+            imageUrl='cfbmap'
+          />
+          <ProjectCard
+            title='California Students Stay Close to Home (Dec. 2013)'
+            description='With the exception of UCLA and UC Berkeley, the home county of each University of California campus sent the majority of its UC-attending students there; students tend to stay near home.'
+            ariaDescription='California Students Stay Close to Home Map'
+            url='http://www.mahabal.io/static/location/jay_final_project.pdf'
+            imageDescription='a choropleth of california counties'
+            imageUrl='uc'
+          />
+        </ProjectSection> */}
 
         <ProjectSection title="Photography">
           <ProjectCard

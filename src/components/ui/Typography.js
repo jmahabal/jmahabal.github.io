@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { space } from 'styled-system'
 
-const sansserif = 'Roboto, sans-serif'
+const sansserif = 'Inter, sans-serif'
 const serif = 'Tangerine, serif'
 const monospace = 'Inconsolata, monospace'
 

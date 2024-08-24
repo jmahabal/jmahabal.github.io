@@ -1,10 +1,7 @@
 import React from 'react'
 import { Link } from '@reach/router'
 import styled from 'styled-components'
-import { RoughNotation } from 'react-rough-notation'
-import Bowser from 'bowser'
 
-import { usePrefersReducedMotion } from './utils'
 import { Span, H1, H4, monospace } from './ui/Typography'
 import { SocialIcon } from './ui/Icons'
 
@@ -14,47 +11,23 @@ const HistoryItem = ({ children }) => (
   </H4>
 )
 
-const browser = Bowser.getParser(window.navigator.userAgent)
-const platformType = browser.getPlatformType()
-const isDesktop = platformType === 'desktop'
+const TextInternalLink = styled.div`
+  display: inline-block;
+  font-size: 18px;
+  font-family: Inconsolata;
+  & > a {
+    text-underline-offset: 2px;
+    text-decoration-thickness: 1px;
+  }
+`
 
-const TextLink = ({ children }) => {
-  const prefersReducedMotion = usePrefersReducedMotion()
-  const [highlightLink, setHighlightLink] = React.useState(false)
-
-  return (
-    <RoughNotation
-      type="highlight"
-      show={prefersReducedMotion ? false : highlightLink}
-      iterations={1}
-      animationDuration={250}
-      onMouseEnter={() => (isDesktop ? setHighlightLink(true) : null)}
-      onMouseLeave={() => (isDesktop ? setHighlightLink(false) : null)}
-      color="rgba(230, 126, 34, 1.0)"
-    >
-      {children}
-    </RoughNotation>
-  )
-}
+const TextLink = styled.a`
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+`
 
 const IconLink = ({ children }) => {
-  const prefersReducedMotion = usePrefersReducedMotion()
-  const [highlightLink, setHighlightLink] = React.useState(false)
-
-  return (
-    <RoughNotation
-      type="circle"
-      show={prefersReducedMotion ? false : highlightLink}
-      iterations={1}
-      animationDuration={250}
-      onMouseEnter={() => (isDesktop ? setHighlightLink(true) : null)}
-      onMouseLeave={() => (isDesktop ? setHighlightLink(false) : null)}
-      color="rgba(230, 126, 34, 1.0)"
-      strokeWidth="2"
-    >
-      {children}
-    </RoughNotation>
-  )
+  return children;
 }
 
 const initialColorCount = Math.round(Math.random() * 1000, 10)
@@ -138,156 +111,144 @@ const Home = () => {
           <H1 mb={2}>Hi, I’m Jay.</H1>
           <HistoryItem>
             I’m currently a Design Engineer at{' '}
-            <TextLink>
-              <a
-                href="https://www.moderntreasury.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Modern Treasury
-              </a>
+            <TextLink
+              href="https://www.moderntreasury.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Modern Treasury
+
             </TextLink>
             .
 
           </HistoryItem>
           <HistoryItem>
             I was previously a UI Engineer at{' '}
-            <TextLink>
-              <a
-                href="http://www.lattice.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Lattice
-              </a>
+            <TextLink
+              href="http://www.lattice.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Lattice
+
             </TextLink>{' and '}
-            <TextLink>
-              <a
-                href="http://www.apple.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Apple
-              </a>
+            <TextLink
+              href="http://www.apple.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Apple
+
             </TextLink>{' '}
             and before that a creative technologist at{' '}
-            <TextLink>
-              <a
-                href="http://www.akqa.com/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                AKQA
-              </a>
+            <TextLink
+              href="http://www.akqa.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              AKQA
+
             </TextLink>
             .
           </HistoryItem>
           <HistoryItem>
             I graduated from{' '}
-            <TextLink>
-              <a
-                href="http://www.berkeley.edu/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                UC Berkeley
-              </a>
+            <TextLink
+              href="http://www.berkeley.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              UC Berkeley
+
             </TextLink>{' '}
             with a Bachelor of Arts in{' '}
-            <TextLink>
-              <a
-                href="https://math.berkeley.edu/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Mathematics
-              </a>
+            <TextLink
+              href="https://math.berkeley.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Mathematics
+
             </TextLink>
             , a minor in{' '}
-            <TextLink>
-              <a
-                href="https://nature.berkeley.edu/advising/minors/gist"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                GIST
-              </a>
+            <TextLink
+              href="https://nature.berkeley.edu/advising/minors/gist"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              GIST
             </TextLink>
             , and a certificate in{' '}
-            <TextLink>
-              <a
-                href="http://bcnm.berkeley.edu/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                New Media
-              </a>
+            <TextLink
+              href="http://bcnm.berkeley.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              New Media
+
             </TextLink>
             .
           </HistoryItem>
           <HistoryItem>
             I love to{' '}
-            <TextLink>
-              <a
-                href="https://www.goodreads.com/user/show/62322015-jay"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                read books
-              </a>
+            <TextLink
+              href="https://www.goodreads.com/user/show/62322015-jay"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              read books
+
             </TextLink>
             , play board games (current favorites are{' '}
-            <TextLink>
-              <a
-                href="https://boardgamegeek.com/boardgame/68448/7-wonders"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                7 Wonders
-              </a>
+            <TextLink
+              href="https://boardgamegeek.com/boardgame/822/carcassonne"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Carcassonne
+
             </TextLink>{' '}
             &{' '}
-            <TextLink>
-              <a
-                href="https://boardgamegeek.com/boardgame/31260/agricola"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Agricola
-              </a>
+            <TextLink
+              href="https://boardgamegeek.com/boardgame/31260/agricola"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Agricola
+
             </TextLink>
             ), and take photos.
           </HistoryItem>
           <div id="links">
-            <TextLink>
+            <TextInternalLink>
               <Link to="/projects">
-                <H4 font={monospace}>Projects</H4>
+                Projects
               </Link>
-            </TextLink>
-            <Span pl={2} pr={2}>
-              ·
+            </TextInternalLink>
+            <Span px="10px">
+              🌱
             </Span>
-            <TextLink>
+            <TextInternalLink>
               <Link to="/talks">
-                <H4 font={monospace}>Talks</H4>
+                Talks
               </Link>
-            </TextLink>
-            <Span pl={2} pr={2}>
-              ·
+            </TextInternalLink>
+            <Span px="10px">
+              🌱
             </Span>
-            <TextLink>
+            <TextInternalLink>
               <Link to="/writing">
-                <H4 font={monospace}>Writing</H4>
+                Writing
               </Link>
-            </TextLink>
-            <Span pl={2} pr={2}>
-              ·
+            </TextInternalLink>
+            <Span px="10px">
+              🌱
             </Span>
-            <TextLink>
+            <TextInternalLink>
               <Link to="/resume">
-                <H4 font={monospace}>Resume</H4>
+                Resume
               </Link>
-            </TextLink>
+            </TextInternalLink>
           </div>
           <div className="swing-below">
             <IconLink>
