@@ -11,6 +11,12 @@ const HistoryItem = ({ children }) => (
   </H4>
 )
 
+const Separator = styled(Span)`
+  font-size: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+`
+
 const TextInternalLink = styled.div`
   display: inline-block;
   font-size: 18px;
@@ -110,7 +116,7 @@ const Home = () => {
         <div className="description-container" role="main">
           <H1 mb={2}>Hi, I’m Jay.</H1>
           <HistoryItem>
-            I’m currently a Design Engineer at{' '}
+            I’m currently a Design Engineer at 💸{' '}
             <TextLink
               href="https://www.moderntreasury.com/"
               target="_blank"
@@ -123,15 +129,14 @@ const Home = () => {
 
           </HistoryItem>
           <HistoryItem>
-            I was previously a UI Engineer at{' '}
+            I most recently worked on design systems at 🥬{' '}
             <TextLink
               href="http://www.lattice.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
               Lattice
-
-            </TextLink>{' and '}
+            </TextLink>{'. Before that, I was a UI engineer at 🍎 '}
             <TextLink
               href="http://www.apple.com/"
               target="_blank"
@@ -140,7 +145,7 @@ const Home = () => {
               Apple
 
             </TextLink>{' '}
-            and before that a creative technologist at{' '}
+            and a creative technologist at 🍄‍🟫{' '}
             <TextLink
               href="http://www.akqa.com/"
               target="_blank"
@@ -152,7 +157,10 @@ const Home = () => {
             .
           </HistoryItem>
           <HistoryItem>
-            I graduated from{' '}
+            I have two cats, 🐈‍⬛ Chance and 🐈 Xena.
+          </HistoryItem>
+          {/* <HistoryItem>
+            I graduated from 🐻{' '}
             <TextLink
               href="http://www.berkeley.edu/"
               target="_blank"
@@ -161,16 +169,15 @@ const Home = () => {
               UC Berkeley
 
             </TextLink>{' '}
-            with a Bachelor of Arts in{' '}
+            with a Bachelor of Arts in 📊{' '}
             <TextLink
               href="https://math.berkeley.edu/"
               target="_blank"
               rel="noopener noreferrer"
             >
               Mathematics
-
             </TextLink>
-            , a minor in{' '}
+            {' '}and a minor in 🗺️{' '}
             <TextLink
               href="https://nature.berkeley.edu/advising/minors/gist"
               target="_blank"
@@ -178,7 +185,8 @@ const Home = () => {
             >
               GIST
             </TextLink>
-            , and a certificate in{' '}
+            .
+            , and a certificate in 🆕{' '}
             <TextLink
               href="http://bcnm.berkeley.edu/"
               target="_blank"
@@ -188,9 +196,9 @@ const Home = () => {
 
             </TextLink>
             .
-          </HistoryItem>
+          </HistoryItem> */}
           <HistoryItem>
-            I love to{' '}
+            I love to 📚{' '}
             <TextLink
               href="https://www.goodreads.com/user/show/62322015-jay"
               target="_blank"
@@ -199,7 +207,7 @@ const Home = () => {
               read books
 
             </TextLink>
-            , play board games (current favorites are{' '}
+            , 🃏 play board games (current favorites are{' '}
             <TextLink
               href="https://boardgamegeek.com/boardgame/822/carcassonne"
               target="_blank"
@@ -217,7 +225,7 @@ const Home = () => {
               Agricola
 
             </TextLink>
-            ), and take photos.
+            ), and take 📷 photos.
           </HistoryItem>
           <div id="links">
             <TextInternalLink>
@@ -225,25 +233,25 @@ const Home = () => {
                 Projects
               </Link>
             </TextInternalLink>
-            <Span px="10px">
+            <Separator>
               🌱
-            </Span>
+            </Separator>
             <TextInternalLink>
               <Link to="/talks">
                 Talks
               </Link>
             </TextInternalLink>
-            <Span px="10px">
+            <Separator>
               🌱
-            </Span>
+            </Separator>
             <TextInternalLink>
               <Link to="/writing">
                 Writing
               </Link>
             </TextInternalLink>
-            <Span px="10px">
+            <Separator>
               🌱
-            </Span>
+            </Separator>
             <TextInternalLink>
               <Link to="/resume">
                 Resume

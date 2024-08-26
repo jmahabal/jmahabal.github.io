@@ -30,7 +30,7 @@ const Links = () => {
             imageUrl="wafflejs"
           />
           <ProjectCard
-            title="Eng. <> Product @ ProductTank NYC"
+            title="Engineering & Product @ ProductTank NYC"
             date="Sept. 2022"
             description="Product and engineering work together to solve problems and make the most excellent tech on the market, but when incentives are unclear, what can be a wonderful relationship gets contentious. That's why Product Tank NYC has partnered with the team at Lattice to discuss managing your relationship with your engineering team."
             ariaDescription="Managing the Engineering and Product Manager Partnership"
