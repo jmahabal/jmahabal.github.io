@@ -16,16 +16,6 @@ const sizes = {
   phone: 320,
 }
 
-// Iterate through the sizes and create a media template
-const media = Object.keys(sizes).reduce((acc, label) => {
-  acc[label] = (...args) => css`
-    @media (min-width: ${sizes[label] / 16}em) {
-      ${css(...args)}
-    }
-  `
-  return acc
-}, {})
-
 const TwoColumn = styled.div`
   display: grid;
   grid-template-columns: repeat(
@@ -48,8 +38,8 @@ const Page = styled.div`
   justify-content: center;
   grid-template-columns: minmax(auto, 800px);
   padding: 1em;
-  ${media.tablet`padding: 2em 1em;`}
-  ${media.desktop`padding: 4em 1em;`}
 `
+// ${media.tablet`padding: 2em 1em;`} FIXME:
+// ${media.desktop`padding: 4em 1em;`} FIXME:
 
 export { Page, TwoColumn, OneColumn }

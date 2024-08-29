@@ -1,0 +1,11 @@
+{
+  "compilerOptions": {
+    "outDir": "./built",
+    "allowJs": true,
+    "target": "es5",
+    "jsx": "react",
+    "module": "commonjs",
+    "allowSyntheticDefaultImports": true
+  },
+  "include": ["./src/**/*", "./declaration.d.ts"]
+}

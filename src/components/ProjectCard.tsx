@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 import { H4, P } from './ui/Typography'
 import { Card } from './ui/Cards'
@@ -16,7 +16,7 @@ const FillerImage = styled.div`
   );
 `
 
-const imageUrlBuilder = name => `./public/portfolio/resized/${name}.jpg`
+const imageUrlBuilder = (name) => `./public/portfolio/resized/${name}.jpg`
 
 const TitleContainer = styled.div`
   display: grid;
@@ -26,7 +26,7 @@ const TitleContainer = styled.div`
   ${space};
 `
 
-const ProjectCard = props => {
+const ProjectCard = (props) => {
   const {
     url,
     title,
@@ -38,8 +38,8 @@ const ProjectCard = props => {
   } = props
 
   return (
-    <Card mb={3}>
-      <TitleContainer mb={3}>
+    <Card className="mb-3">
+      <TitleContainer className="mb-3">
         <H4>{title}</H4>
         <P>{date}</P>
       </TitleContainer>
@@ -56,7 +56,7 @@ const ProjectCard = props => {
           <FillerImage />
         )}
       </a>
-      <P mt={3}>{description}</P>
+      <P className="mb-3">{description}</P>
     </Card>
   )
 }

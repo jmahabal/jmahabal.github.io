@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 
 import ProjectCard from './ProjectCard'
@@ -11,7 +11,7 @@ const Container = styled.div`
   grid-row-gap: 40px;
 `
 
-const Links = () => {
+const Writing = () => {
   return (
     <Page>
       <TwoColumn>
@@ -33,4 +33,4 @@ const Links = () => {
   )
 }
 
-export default Links
+export default Writing

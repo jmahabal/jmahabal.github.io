@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 import { Page, OneColumn } from './ui/Grid'
 import { HomeLink } from './ui/HomeLink'
@@ -13,13 +13,12 @@ const ResumeImage = styled.img`
   max-width: 800px;
 `
 
-const Resume = ({ imageDescription }) => {
+const Resume = () => {
   return (
     <Page>
       <OneColumn>
         <ResumeContainer>
           <ResumeImage
-            alt={imageDescription}
             src="./public/resume/resume_jaymahabal.jpg"
           />
         </ResumeContainer>

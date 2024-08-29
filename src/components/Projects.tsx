@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import styled from 'styled-components'
 import ProjectCard from './ProjectCard'
 import { H1, H3, H4 } from './ui/Typography'
@@ -6,11 +6,7 @@ import { TwoColumn, Page, breakpoint } from './ui/Grid'
 import { HomeLink } from './ui/HomeLink'
 
 // TODO: move to a utils folder
-const toKebabCase = word =>
-  word
-    .toLowerCase()
-    .split(' ')
-    .join('-')
+const toKebabCase = (word) => word.toLowerCase().split(' ').join('-')
 
 const Container = styled.div`
   display: grid;
@@ -22,7 +18,7 @@ const Container = styled.div`
 const ProjectSection = ({ title, children }) => {
   return (
     <div>
-      <H3 id={toKebabCase(title)} mt={5} mb={3}>
+      <H3 id={toKebabCase(title)} className="!mt-5 !mb-3">
         {title}
       </H3>
       <TwoColumn>{children}</TwoColumn>
@@ -36,9 +32,10 @@ const Projects = () => {
       <Container className="portfolio-container" role="main">
         <div>
           <H1>Projects</H1>
-          <H4 mb={2}>
+          <H4 className="!mb-2">
             This is a collection of the personal projects I’ve built. Most
-            recently I’ve been interested in maps, experiential projects, and typography.
+            recently I’ve been interested in maps, experiential projects, and
+            typography.
           </H4>
         </div>
 

@@ -7,37 +7,38 @@ const monospace = 'Inconsolata, monospace'
 
 const maxTextWidth = '55ch'
 
-const Text = styled.span`
+export const Text = styled.span`
   font-weight: normal;
-  margin: 0;
-  font-family: ${props => props.font || sansserif};
+  font-family: ${sansserif};
   line-height: 1.4;
   max-width: ${maxTextWidth};
   display: inherit;
+  margin-top: 0;
+  margin-bottom: 0;
   ${space};
 `
 
-const H1 = Text.withComponent('h1').extend`
+const H1 = styled(Text).attrs({ as: 'h1'})`
     font-size: 36px;
 `
 
-const H2 = Text.withComponent('h2').extend`
+const H2 = styled(Text).attrs({ as: 'h2'})`
     font-size: 30px;
 `
 
-const H3 = Text.withComponent('h3').extend`
+const H3 = styled(Text).attrs({ as: 'h3'})`
     font-size: 24px;
 `
 
-const H4 = Text.withComponent('h4').extend`
+const H4 = styled(Text).attrs({ as: 'h4'})`
     font-size: 18px;
 `
 
-const H6 = Text.withComponent('h6').extend`
+const H6 = styled(Text).attrs({ as: 'h6'})`
     font-size: 16px;
 `
 
-const P = Text.withComponent('p').extend`
+const P = styled(Text).attrs({ as: 'p' })`
     font-size: 14px;
     font-family: ${monospace};
 `

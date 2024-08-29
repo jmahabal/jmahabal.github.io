@@ -117,11 +117,13 @@ h1.portfolio-title {
 }
 
 .filler-image {
-  background: repeating-linear-gradient(45deg,
-      #95a5a6,
-      #95a5a6 10px,
-      #ecf0f1 10px,
-      #ecf0f1 20px);
+  background: repeating-linear-gradient(
+    45deg,
+    #95a5a6,
+    #95a5a6 10px,
+    #ecf0f1 10px,
+    #ecf0f1 20px
+  );
 }
 
 .portfolio-item-title {

@@ -1,15 +1,16 @@
-import React from 'react'
-import { Link } from '@reach/router'
+import * as React from 'react'
+import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { Span, H1, H4, monospace } from './ui/Typography'
+import { Span, H1, H4, Text, monospace } from './ui/Typography'
 import { SocialIcon } from './ui/Icons'
 
-const HistoryItem = ({ children }) => (
-  <H4 mt={3} mb={3} font={monospace}>
-    {children}
-  </H4>
-)
+const HistoryItem = styled(Text)`
+  font-family: 'Inconsolata';
+  font-size: 18px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+`
 
 const Separator = styled(Span)`
   font-size: 12px;
@@ -32,11 +33,7 @@ const TextLink = styled.a`
   text-decoration-thickness: 1px;
 `
 
-const IconLink = ({ children }) => {
-  return children;
-}
-
-const initialColorCount = Math.round(Math.random() * 1000, 10)
+const initialColorCount = Math.round(Math.random() * 1000)
 
 let lastX = initialColorCount
 let lastY = -initialColorCount
@@ -47,8 +44,8 @@ const changeColor = () => {
   let x = lastX + 1
   let y = lastY - 1
 
-  x = Math.round((Math.sin(x / sinBuffer) / 2 + 0.5) * 255, 10)
-  y = Math.round((Math.sin(y / sinBuffer) / 2 + 0.5) * 255, 10)
+  x = Math.round((Math.sin(x / sinBuffer) / 2 + 0.5) * 255)
+  y = Math.round((Math.sin(y / sinBuffer) / 2 + 0.5) * 255)
 
   lastX += 1
   lastY -= 1
@@ -111,10 +108,10 @@ const Home = () => {
     <Page>
       <Container>
         <IllustrationContainer>
-          <BlushIllutration alt="Hello!" src="./public/jay-illus.png" />
+          <BlushIllutration alt="Hello!" src="public/jay-illus.png" />
         </IllustrationContainer>
         <div className="description-container" role="main">
-          <H1 mb={2}>Hi, I’m Jay.</H1>
+          <H1 className="mb-2">Hi, I’m Jay.</H1>
           <HistoryItem>
             I’m currently a Design Engineer at 💸{' '}
             <TextLink
@@ -123,10 +120,8 @@ const Home = () => {
               rel="noopener noreferrer"
             >
               Modern Treasury
-
             </TextLink>
             .
-
           </HistoryItem>
           <HistoryItem>
             I most recently worked on design systems at 🥬{' '}
@@ -136,14 +131,14 @@ const Home = () => {
               rel="noopener noreferrer"
             >
               Lattice
-            </TextLink>{'. Before that, I was a UI engineer at 🍎 '}
+            </TextLink>
+            {'. Before that, I was a UI engineer at 🍎 '}
             <TextLink
               href="http://www.apple.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
               Apple
-
             </TextLink>{' '}
             and a creative technologist at 🍄‍🟫{' '}
             <TextLink
@@ -152,13 +147,10 @@ const Home = () => {
               rel="noopener noreferrer"
             >
               AKQA
-
             </TextLink>
             .
           </HistoryItem>
-          <HistoryItem>
-            I have two cats, 🐈‍⬛ Chance and 🐈 Xena.
-          </HistoryItem>
+          <HistoryItem>I have two cats, 🐈‍⬛ Chance and 🐈 Xena.</HistoryItem>
           {/* <HistoryItem>
             I graduated from 🐻{' '}
             <TextLink
@@ -205,7 +197,6 @@ const Home = () => {
               rel="noopener noreferrer"
             >
               read books
-
             </TextLink>
             , 🃏 play board games (current favorites are{' '}
             <TextLink
@@ -214,7 +205,6 @@ const Home = () => {
               rel="noopener noreferrer"
             >
               Carcassonne
-
             </TextLink>{' '}
             &{' '}
             <TextLink
@@ -223,97 +213,72 @@ const Home = () => {
               rel="noopener noreferrer"
             >
               Agricola
-
             </TextLink>
             ), and take 📷 photos.
           </HistoryItem>
           <div id="links">
             <TextInternalLink>
-              <Link to="/projects">
-                Projects
-              </Link>
+              <Link to="/projects">Projects</Link>
             </TextInternalLink>
-            <Separator>
-              🌱
-            </Separator>
+            <Separator>🌱</Separator>
             <TextInternalLink>
-              <Link to="/talks">
-                Talks
-              </Link>
+              <Link to="/talks">Talks</Link>
             </TextInternalLink>
-            <Separator>
-              🌱
-            </Separator>
+            <Separator>🌱</Separator>
             <TextInternalLink>
-              <Link to="/writing">
-                Writing
-              </Link>
+              <Link to="/writing">Writing</Link>
             </TextInternalLink>
-            <Separator>
-              🌱
-            </Separator>
+            <Separator>🌱</Separator>
             <TextInternalLink>
-              <Link to="/resume">
-                Resume
-              </Link>
+              <Link to="/resume">Resume</Link>
             </TextInternalLink>
           </div>
           <div className="swing-below">
-            <IconLink>
-              <a
-                href="https://www.github.com/jmahabal"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="home-icon"
-                aria-label="Github"
-              >
-                {<SocialIcon icon="github" />}
-              </a>
-            </IconLink>
-            <IconLink>
-              <a
-                href="https://www.linkedin.com/in/jmahabal"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="home-icon"
-                aria-label="LinkedIn"
-              >
-                {<SocialIcon icon="linkedin" />}
-              </a>
-            </IconLink>
-            <IconLink>
-              <a
-                href="https://www.instagram.com/jmahabal"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="home-icon"
-                aria-label="Instagram"
-              >
-                {<SocialIcon icon="instagram" />}
-              </a>
-            </IconLink>
-            <IconLink>
-              <a
-                href="https://www.twitter.com/jaymahabal"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="home-icon"
-                aria-label="Twitter"
-              >
-                {<SocialIcon icon="twitter" />}
-              </a>
-            </IconLink>
-            <IconLink>
-              <a
-                href="mailto:jmahabal+website@gmail.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="home-icon"
-                aria-label="Email"
-              >
-                {<SocialIcon icon="email" />}
-              </a>
-            </IconLink>
+            <a
+              href="https://www.github.com/jmahabal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="home-icon"
+              aria-label="Github"
+            >
+              {<SocialIcon icon="github" />}
+            </a>
+            <a
+              href="https://www.linkedin.com/in/jmahabal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="home-icon"
+              aria-label="LinkedIn"
+            >
+              {<SocialIcon icon="linkedin" />}
+            </a>
+            <a
+              href="https://www.instagram.com/jmahabal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="home-icon"
+              aria-label="Instagram"
+            >
+              {<SocialIcon icon="instagram" />}
+            </a>
+            <a
+              href="https://www.twitter.com/jaymahabal"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="home-icon"
+              aria-label="Twitter"
+            >
+              {<SocialIcon icon="twitter" />}
+            </a>
+            <a
+              href="mailto:jmahabal+website@gmail.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="home-icon"
+              aria-label="Email"
+            >
+              {<SocialIcon icon="email" />}
+            </a>
           </div>
         </div>
       </Container>
