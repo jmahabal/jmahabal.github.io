@@ -62,6 +62,15 @@ const Projects = () => {
             imageDescription="An Emoji Map of San Francisco and the East Bay"
             imageUrl="emojimap"
           />
+          <ProjectCard
+            title="Majority < Minority"
+            date="Sept. 2023"
+            description="Developed during the School for Poetic Computation’s “Alternative Typographic Histories” class, this project re-imagines NYC subway posters in other languages."
+            ariaDescription="An map of New York City that has posters for the OMNY payment method in multiple languages."
+            url="/majority-minority"
+            imageDescription="A alternative imagining of NYC MTA subway posters."
+            imageUrl="tigrinya"
+          />
           <div />
         </ProjectSection>
 
