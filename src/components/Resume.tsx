@@ -18,9 +18,11 @@ const Resume = () => {
     <Page>
       <OneColumn>
         <ResumeContainer>
-          <ResumeImage
-            src="./public/resume/resume_jaymahabal.jpg"
-          />
+          <ResumeImage src="./public/resume/resume_jaymahabal.jpg" />
+          {/* <object
+            type="application/pdf"
+            data="./public/resume/resume_jaymahabal.pdf"
+          ></object> */}
         </ResumeContainer>
         <HomeLink />
       </OneColumn>
