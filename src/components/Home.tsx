@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components'
 
-import { Span, H1, H4, Text, monospace } from './ui/Typography'
+import { Span, H1, Text } from './ui/Typography'
 import { SocialIcon } from './ui/Icons'
 
 const HistoryItem = styled(Text)`
@@ -37,7 +37,6 @@ const initialColorCount = Math.round(Math.random() * 1000)
 
 let lastX = initialColorCount
 let lastY = -initialColorCount
-const time = 250
 const sinBuffer = 150
 
 const changeColor = () => {
@@ -108,7 +107,7 @@ const Home = () => {
     <Page>
       <Container>
         <IllustrationContainer>
-          <BlushIllutration alt="Hello!" src="public/jay-illus.png" />
+          <BlushIllutration alt="Hello!" src="/jay-illus.png" />
         </IllustrationContainer>
         <div className="description-container" role="main">
           <H1 className="mb-2">Hi, I’m Jay.</H1>
@@ -216,24 +215,8 @@ const Home = () => {
             </TextLink>
             ), and take 📷 photos.
           </HistoryItem>
-          <div id="links">
-            <TextInternalLink>
-              <Link to="/projects">Projects</Link>
-            </TextInternalLink>
-            <Separator>🌱</Separator>
-            <TextInternalLink>
-              <Link to="/talks">Talks</Link>
-            </TextInternalLink>
-            <Separator>🌱</Separator>
-            <TextInternalLink>
-              <Link to="/writing">Writing</Link>
-            </TextInternalLink>
-            <Separator>🌱</Separator>
-            <TextInternalLink>
-              <Link to="/resume">Resume</Link>
-            </TextInternalLink>
-          </div>
-          <div className="swing-below">
+
+          <div className="my-8 flex items-center justify-center">
             <a
               href="https://www.github.com/jmahabal"
               target="_blank"
@@ -279,6 +262,23 @@ const Home = () => {
             >
               {<SocialIcon icon="email" />}
             </a>
+          </div>
+          <div id="links">
+            <TextInternalLink>
+              <Link to="/projects">Projects</Link>
+            </TextInternalLink>
+            <Separator> </Separator>
+            <TextInternalLink>
+              <Link to="/talks">Talks</Link>
+            </TextInternalLink>
+            <Separator> </Separator>
+            <TextInternalLink>
+              <Link to="/writing">Writing</Link>
+            </TextInternalLink>
+            <Separator> </Separator>
+            <TextInternalLink>
+              <Link to="/resume">Resume</Link>
+            </TextInternalLink>
           </div>
         </div>
       </Container>

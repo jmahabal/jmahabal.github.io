@@ -1,8 +1,17 @@
-import * as React from 'react'
 import styled from 'styled-components'
 import { H4, P } from './ui/Typography'
 import { Card } from './ui/Cards'
 import { space } from 'styled-system'
+
+interface ProjectCardProps {
+  url: string
+  title: string
+  date: string
+  ariaDescription: string
+  imageUrl?: string
+  imageDescription?: string
+  description?: string
+}
 
 const FillerImage = styled.div`
   height: 75px;
@@ -16,7 +25,7 @@ const FillerImage = styled.div`
   );
 `
 
-const imageUrlBuilder = (name) => `./public/portfolio/resized/${name}.jpg`
+const imageUrlBuilder = (name: string) => `/portfolio/resized/${name}.jpg`
 
 const TitleContainer = styled.div`
   display: grid;
@@ -26,7 +35,7 @@ const TitleContainer = styled.div`
   ${space};
 `
 
-const ProjectCard = (props) => {
+const ProjectCard = (props: ProjectCardProps) => {
   const {
     url,
     title,
@@ -56,7 +65,7 @@ const ProjectCard = (props) => {
           <FillerImage />
         )}
       </a>
-      <P className="mb-3">{description}</P>
+      {description && <P className="mb-3">{description}</P>}
     </Card>
   )
 }

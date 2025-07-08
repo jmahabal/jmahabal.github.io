@@ -18,29 +18,29 @@ export const Text = styled.span`
   ${space};
 `
 
-const H1 = styled(Text).attrs({ as: 'h1'})`
-    font-size: 36px;
+const H1 = styled(Text).attrs({ as: 'h1' })`
+  font-size: 36px;
 `
 
-const H2 = styled(Text).attrs({ as: 'h2'})`
-    font-size: 30px;
+const H2 = styled(Text).attrs({ as: 'h2' })`
+  font-size: 30px;
 `
 
-const H3 = styled(Text).attrs({ as: 'h3'})`
-    font-size: 24px;
+const H3 = styled(Text).attrs({ as: 'h3' })`
+  font-size: 24px;
 `
 
-const H4 = styled(Text).attrs({ as: 'h4'})`
-    font-size: 18px;
+const H4 = styled(Text).attrs({ as: 'h4' })`
+  font-size: 18px;
 `
 
-const H6 = styled(Text).attrs({ as: 'h6'})`
-    font-size: 16px;
+const H6 = styled(Text).attrs({ as: 'h6' })`
+  font-size: 16px;
 `
 
 const P = styled(Text).attrs({ as: 'p' })`
-    font-size: 14px;
-    font-family: ${monospace};
+  font-size: 14px;
+  font-family: ${monospace};
 `
 
 const Span = styled.span`

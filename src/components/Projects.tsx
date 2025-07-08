@@ -6,7 +6,7 @@ import { TwoColumn, Page, breakpoint } from './ui/Grid'
 import { HomeLink } from './ui/HomeLink'
 
 // TODO: move to a utils folder
-const toKebabCase = (word) => word.toLowerCase().split(' ').join('-')
+const toKebabCase = (word: string) => word.toLowerCase().split(' ').join('-')
 
 const Container = styled.div`
   display: grid;
@@ -15,12 +15,15 @@ const Container = styled.div`
   max-width: ${breakpoint}px;
 `
 
-const ProjectSection = ({ title, children }) => {
+interface ProjectSectionProps {
+  title: string
+  children: React.ReactNode
+}
+
+const ProjectSection = ({ title, children }: ProjectSectionProps) => {
   return (
-    <div>
-      <H3 id={toKebabCase(title)} className="!mt-5 !mb-3">
-        {title}
-      </H3>
+    <div className="mt-5 mb-3">
+      <H3 id={toKebabCase(title)}>{title}</H3>
       <TwoColumn>{children}</TwoColumn>
     </div>
   )

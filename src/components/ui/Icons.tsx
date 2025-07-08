@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 const github = (
   <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <title>Github</title>
@@ -38,7 +36,7 @@ const email = (
   </svg>
 )
 
-const toIconSVG = (icon) => {
+const toIconSVG = (icon: string) => {
   if (icon === 'github') return github
   if (icon === 'instagram') return instagram
   if (icon === 'linkedin') return linkedin
@@ -47,7 +45,7 @@ const toIconSVG = (icon) => {
   return null
 }
 
-const SocialIcon = ({ icon }) => toIconSVG(icon)
+const SocialIcon = ({ icon }: { icon: string }) => toIconSVG(icon)
 
 export { SocialIcon }
 export const Arrow = () => (

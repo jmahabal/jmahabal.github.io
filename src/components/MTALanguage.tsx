@@ -1,4 +1,3 @@
-import * as React from 'react'
 import styled from 'styled-components'
 import { Page, OneColumn } from './ui/Grid'
 import { HomeLink } from './ui/HomeLink'
@@ -22,7 +21,7 @@ const MTALanguage = () => {
     <Page>
       <OneColumn>
         <MTALanguageContainer>
-          <MTALanguageImage src="./public/mta-language.png" />
+          <MTALanguageImage src="/mta-language.png" />
         </MTALanguageContainer>
         <TextContainer>
           <HomeLink />

@@ -1,4 +1,3 @@
-import * as React from 'react'
 import styled from 'styled-components'
 import { Page, OneColumn } from './ui/Grid'
 import { HomeLink } from './ui/HomeLink'
@@ -18,10 +17,10 @@ const Resume = () => {
     <Page>
       <OneColumn>
         <ResumeContainer>
-          <ResumeImage src="./public/resume/resume_jaymahabal.jpg" />
+          <ResumeImage src="/resume/resume_jaymahabal.jpg" />
           {/* <object
             type="application/pdf"
-            data="./public/resume/resume_jaymahabal.pdf"
+            data="/resume/resume_jaymahabal.pdf"
           ></object> */}
         </ResumeContainer>
         <HomeLink />

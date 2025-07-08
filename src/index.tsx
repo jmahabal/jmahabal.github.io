@@ -8,7 +8,10 @@ import Resume from './components/Resume'
 import Projects from './components/Projects'
 import Talks from './components/Talks'
 import Writing from './components/Writing'
+
+import WritingPost from './components/WritingPost'
 import './styles/main.scss'
+import './index.css'
 import MTALanguage from './components/MTALanguage'
 
 // for images
@@ -28,9 +31,10 @@ const router = createBrowserRouter([
   { path: '/projects', element: <Projects /> },
   { path: '/talks', element: <Talks /> },
   { path: '/writing', element: <Writing /> },
+  { path: '/writing/:slug', element: <WritingPost /> },
 ])
 
-ReactDOM.createRoot(document.getElementById('index')).render(
+ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <RouterProvider router={router} />
   </React.StrictMode>,

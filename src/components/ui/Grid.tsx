@@ -1,20 +1,12 @@
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { space } from 'styled-system'
 
-const maxWidth = 1024
 const desktopGutter = 48
-const mobileGutter = 24
 
 export const breakpoint = 768
 
 const columnGap = 0.5 * desktopGutter
 const rowGap = 0.5 * desktopGutter
-
-const sizes = {
-  desktop: 992,
-  tablet: 768,
-  phone: 320,
-}
 
 const TwoColumn = styled.div`
   display: grid;
