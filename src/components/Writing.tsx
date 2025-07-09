@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import ProjectCard from './ProjectCard'
 import { H1 } from './ui/Typography'
-import { Page, TwoColumn } from './ui/Grid'
+import { Page, TwoColumn, Container } from './ui/Layout'
 import { HomeLink } from './ui/HomeLink'
 import { getAllPosts, type WritingPost } from '../utils/markdownLoader'
 
@@ -61,7 +61,7 @@ const Writing = () => {
 
   return (
     <Page>
-      <div className="grid gap-10">
+      <Container>
         <H1>Writing</H1>
 
         <TwoColumn>
@@ -82,7 +82,7 @@ const Writing = () => {
         <div className="mt-12">
           <HomeLink />
         </div>
-      </div>
+      </Container>
     </Page>
   )
 }

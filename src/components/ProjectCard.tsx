@@ -1,7 +1,5 @@
-import styled from 'styled-components'
+import { cn } from '../utils/cn'
 import { H4, P } from './ui/Typography'
-import { Card } from './ui/Cards'
-import { space } from 'styled-system'
 
 interface ProjectCardProps {
   url: string
@@ -13,27 +11,7 @@ interface ProjectCardProps {
   description?: string
 }
 
-const FillerImage = styled.div`
-  height: 75px;
-  border: 1px black solid;
-  background: repeating-linear-gradient(
-    45deg,
-    #95a5a6,
-    #95a5a6 10px,
-    #ecf0f1 10px,
-    #ecf0f1 20px
-  );
-`
-
 const imageUrlBuilder = (name: string) => `/portfolio/resized/${name}.jpg`
-
-const TitleContainer = styled.div`
-  display: grid;
-  grid-template-columns: 1fr auto;
-  grid-column-gap: 8px;
-  align-items: flex-end;
-  ${space};
-`
 
 const ProjectCard = (props: ProjectCardProps) => {
   const {
@@ -47,26 +25,36 @@ const ProjectCard = (props: ProjectCardProps) => {
   } = props
 
   return (
-    <Card className="mb-3">
-      <TitleContainer className="mb-3">
+    <div className="mb-3">
+      <div className={cn('grid grid-cols-[1fr_auto] gap-x-2 items-end mb-3')}>
         <H4>{title}</H4>
         <P>{date}</P>
-      </TitleContainer>
+      </div>
       <a
-        className="portfolio-item"
+        className="my-4 h-[75px] flex w-full"
         href={url}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={ariaDescription}
       >
         {imageUrl ? (
-          <img alt={imageDescription} src={imageUrlBuilder(imageUrl)} />
+          <img
+            alt={imageDescription}
+            src={imageUrlBuilder(imageUrl)}
+            className="w-full h-full object-cover border border-black"
+          />
         ) : (
-          <FillerImage />
+          <div
+            className={cn('h-[75px] w-full border border-black')}
+            style={{
+              backgroundImage:
+                'repeating-linear-gradient(45deg, #95a5a6, #95a5a6 10px, #ecf0f1 10px, #ecf0f1 20px)',
+            }}
+          />
         )}
       </a>
       {description && <P className="mb-3">{description}</P>}
-    </Card>
+    </div>
   )
 }
 

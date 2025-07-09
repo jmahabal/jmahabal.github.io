@@ -1,17 +1,7 @@
-import styled from 'styled-components'
-
 import ProjectCard from './ProjectCard'
 import { H1 } from './ui/Typography'
-import { Page, TwoColumn, breakpoint } from './ui/Grid'
+import { Page, TwoColumn, Container } from './ui/Layout'
 import { HomeLink } from './ui/HomeLink'
-
-const Container = styled.div`
-  display: grid;
-  gap: 40px;
-  flex-direction: column;
-  width: 100%;
-  max-width: ${breakpoint}px;
-`
 
 const Links = () => {
   return (

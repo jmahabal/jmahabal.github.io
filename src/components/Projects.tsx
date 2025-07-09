@@ -1,23 +1,15 @@
-import * as React from 'react'
-import styled from 'styled-components'
+import { type ReactNode } from 'react'
 import ProjectCard from './ProjectCard'
 import { H1, H3, H4 } from './ui/Typography'
-import { TwoColumn, Page, breakpoint } from './ui/Grid'
+import { TwoColumn, Page, Container } from './ui/Layout'
 import { HomeLink } from './ui/HomeLink'
 
 // TODO: move to a utils folder
 const toKebabCase = (word: string) => word.toLowerCase().split(' ').join('-')
 
-const Container = styled.div`
-  display: grid;
-  flex-direction: column;
-  width: 100%;
-  max-width: ${breakpoint}px;
-`
-
 interface ProjectSectionProps {
   title: string
-  children: React.ReactNode
+  children: ReactNode
 }
 
 const ProjectSection = ({ title, children }: ProjectSectionProps) => {
@@ -32,7 +24,7 @@ const ProjectSection = ({ title, children }: ProjectSectionProps) => {
 const Projects = () => {
   return (
     <Page>
-      <Container className="portfolio-container" role="main">
+      <Container>
         <div>
           <H1>Projects</H1>
           <H4 className="!mb-2">

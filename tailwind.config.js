@@ -7,15 +7,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        'inconsolata': ['Inconsolata', 'monospace'],
-        'inter': ['Inter', 'sans-serif'],
-        'tangerine': ['Tangerine', 'cursive'],
+        sans: ['Inter', 'sans-serif'],
+        serif: ['Tangerine', 'serif'],
+        mono: ['Inconsolata', 'monospace'],
       },
     },
   },
   plugins: [],
-  corePlugins: {
-    preflight: false,
-  }
 }
 

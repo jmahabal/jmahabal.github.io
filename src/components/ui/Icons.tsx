@@ -45,7 +45,12 @@ const toIconSVG = (icon: string) => {
   return null
 }
 
-const SocialIcon = ({ icon }: { icon: string }) => toIconSVG(icon)
+const SocialIcon = ({ icon }: { icon: string }) => {
+  const svg = toIconSVG(icon)
+  if (!svg) return null
+
+  return <div className="w-full h-full fill-current">{svg}</div>
+}
 
 export { SocialIcon }
 export const Arrow = () => (

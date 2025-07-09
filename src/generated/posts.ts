@@ -8,5 +8,5 @@ export function getAllPosts(): WritingPost[] {
 }
 
 export function getPostBySlug(slug: string): WritingPost | null {
-  return posts.find(post => post.slug === slug) || null
+  return posts.find((post) => post.slug === slug) || null
 }

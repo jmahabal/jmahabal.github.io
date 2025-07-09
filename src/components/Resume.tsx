@@ -1,30 +1,51 @@
-import styled from 'styled-components'
-import { Page, OneColumn } from './ui/Grid'
+import { type ReactNode } from 'react'
+import { cn } from '../utils/cn'
+import { Page, OneColumn, Container } from './ui/Layout'
 import { HomeLink } from './ui/HomeLink'
+import { H1 } from './ui/Typography'
 
-const ResumeContainer = styled.div`
-  border: 1px black solid;
-  margin: 40px 0;
-`
+interface ResumeContainerProps {
+  children: ReactNode
+  className?: string
+}
 
-const ResumeImage = styled.img`
-  width: 100%;
-  max-width: 800px;
-`
+const ResumeContainer = ({
+  children,
+  className = '',
+}: ResumeContainerProps) => {
+  return (
+    <div className={cn('border border-black my-10', className)}>{children}</div>
+  )
+}
+
+interface ResumeImageProps {
+  src: string
+  alt?: string
+  className?: string
+}
+
+const ResumeImage = ({ src, alt = '', className = '' }: ResumeImageProps) => {
+  return (
+    <img
+      src={src}
+      alt={alt}
+      className={cn('w-full max-w-[800px]', className)}
+    />
+  )
+}
 
 const Resume = () => {
   return (
     <Page>
-      <OneColumn>
-        <ResumeContainer>
-          <ResumeImage src="/resume/resume_jaymahabal.jpg" />
-          {/* <object
-            type="application/pdf"
-            data="/resume/resume_jaymahabal.pdf"
-          ></object> */}
-        </ResumeContainer>
+      <Container>
+        <H1>Resume</H1>
+        <OneColumn>
+          <ResumeContainer>
+            <ResumeImage src="/resume/resume_jaymahabal.jpg" />
+          </ResumeContainer>
+        </OneColumn>
         <HomeLink />
-      </OneColumn>
+      </Container>
     </Page>
   )
 }
