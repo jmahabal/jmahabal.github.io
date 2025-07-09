@@ -3,9 +3,7 @@ import ProjectCard from './ProjectCard'
 import { H1, H3, H4 } from './ui/Typography'
 import { TwoColumn, Page, Container } from './ui/Layout'
 import { HomeLink } from './ui/HomeLink'
-
-// TODO: move to a utils folder
-const toKebabCase = (word: string) => word.toLowerCase().split(' ').join('-')
+import { toKebabCase } from '../utils/common'
 
 interface ProjectSectionProps {
   title: string
@@ -15,7 +13,9 @@ interface ProjectSectionProps {
 const ProjectSection = ({ title, children }: ProjectSectionProps) => {
   return (
     <div className="mt-5 mb-3">
-      <H3 id={toKebabCase(title)}>{title}</H3>
+      <H3 id={toKebabCase(title)} className="mb-4">
+        {title}
+      </H3>
       <TwoColumn>{children}</TwoColumn>
     </div>
   )
@@ -25,9 +25,9 @@ const Projects = () => {
   return (
     <Page>
       <Container>
-        <div>
+        <div className="mb-6">
           <H1>Projects</H1>
-          <H4 className="!mb-2">
+          <H4>
             This is a collection of the personal projects I’ve built. Most
             recently I’ve been interested in maps, experiential projects, and
             typography.

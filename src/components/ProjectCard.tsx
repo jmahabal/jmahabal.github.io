@@ -26,7 +26,7 @@ const ProjectCard = (props: ProjectCardProps) => {
 
   return (
     <div className="mb-3">
-      <div className={cn('grid grid-cols-[1fr_auto] gap-x-2 items-end mb-3')}>
+      <div className={cn('grid grid-cols-[1fr_auto] gap-x-2 items-end')}>
         <H4>{title}</H4>
         <P>{date}</P>
       </div>

@@ -1,156 +1,98 @@
-import { type ReactNode } from 'react'
 import { cn } from '../../utils/cn'
 
 const sansserif = 'Inter, sans-serif'
 const serif = 'Tangerine, serif'
 const monospace = 'Inconsolata, monospace'
 
-interface TextProps {
-  children: ReactNode
-  className?: string
-  [key: string]: unknown
-}
+const TYPOGRAPHY_VARIANTS = {
+  h1: 'text-[36px] font-sans max-w-[55ch]',
+  h2: 'text-[30px] font-sans max-w-[55ch]',
+  h3: 'text-[24px] font-sans max-w-[55ch]',
+  h4: 'text-[18px] font-sans max-w-[55ch]',
+  h6: 'text-[16px] font-sans max-w-[55ch]',
+  p: 'text-[14px] font-mono max-w-[55ch]',
+  span: 'text-[14px] font-sans max-w-[55ch]',
+  text: 'text-[14px] font-sans max-w-[55ch]',
+} as const
 
-export const Text = ({ children, className = '', ...props }: TextProps) => {
-  return (
-    <span
-      className={cn('font-normal font-sans block m-0', className)}
-      {...props}
-    >
-      {children}
-    </span>
-  )
-}
+const H1 = ({
+  children,
+  className = '',
+  ...props
+}: React.HTMLAttributes<HTMLHeadingElement>) => (
+  <h1 className={cn(TYPOGRAPHY_VARIANTS.h1, className)} {...props}>
+    {children}
+  </h1>
+)
 
-interface H1Props {
-  children: ReactNode
-  className?: string
-  [key: string]: unknown
-}
+const H2 = ({
+  children,
+  className = '',
+  ...props
+}: React.HTMLAttributes<HTMLHeadingElement>) => (
+  <h2 className={cn(TYPOGRAPHY_VARIANTS.h2, className)} {...props}>
+    {children}
+  </h2>
+)
 
-const H1 = ({ children, className = '', ...props }: H1Props) => {
-  return (
-    <h1
-      className={cn(
-        'text-[36px] font-normal font-sans leading-relaxed max-w-[55ch] block m-0',
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </h1>
-  )
-}
+const H3 = ({
+  children,
+  className = '',
+  ...props
+}: React.HTMLAttributes<HTMLHeadingElement>) => (
+  <h3 className={cn(TYPOGRAPHY_VARIANTS.h3, className)} {...props}>
+    {children}
+  </h3>
+)
 
-interface H2Props {
-  children: ReactNode
-  className?: string
-  [key: string]: unknown
-}
+const H4 = ({
+  children,
+  className = '',
+  ...props
+}: React.HTMLAttributes<HTMLHeadingElement>) => (
+  <h4 className={cn(TYPOGRAPHY_VARIANTS.h4, className)} {...props}>
+    {children}
+  </h4>
+)
 
-const H2 = ({ children, className = '', ...props }: H2Props) => {
-  return (
-    <h2
-      className={cn(
-        'text-[30px] font-normal font-sans leading-relaxed max-w-[55ch] block m-0',
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </h2>
-  )
-}
+const H6 = ({
+  children,
+  className = '',
+  ...props
+}: React.HTMLAttributes<HTMLHeadingElement>) => (
+  <h6 className={cn(TYPOGRAPHY_VARIANTS.h6, className)} {...props}>
+    {children}
+  </h6>
+)
 
-interface H3Props {
-  children: ReactNode
-  className?: string
-  [key: string]: unknown
-}
+const P = ({
+  children,
+  className = '',
+  ...props
+}: React.HTMLAttributes<HTMLParagraphElement>) => (
+  <p className={cn(TYPOGRAPHY_VARIANTS.p, className)} {...props}>
+    {children}
+  </p>
+)
 
-const H3 = ({ children, className = '', ...props }: H3Props) => {
-  return (
-    <h3
-      className={cn(
-        'text-[24px] font-normal font-sans leading-relaxed max-w-[55ch] block m-0',
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </h3>
-  )
-}
+const Span = ({
+  children,
+  className = '',
+  ...props
+}: React.HTMLAttributes<HTMLSpanElement>) => (
+  <span className={cn(TYPOGRAPHY_VARIANTS.span, className)} {...props}>
+    {children}
+  </span>
+)
 
-interface H4Props {
-  children: ReactNode
-  className?: string
-  [key: string]: unknown
-}
+const Text = ({
+  children,
+  className = '',
+  ...props
+}: React.HTMLAttributes<HTMLSpanElement>) => (
+  <span className={cn(TYPOGRAPHY_VARIANTS.text, className)} {...props}>
+    {children}
+  </span>
+)
 
-const H4 = ({ children, className = '', ...props }: H4Props) => {
-  return (
-    <h4
-      className={cn(
-        'text-[18px] font-normal font-sans leading-relaxed max-w-[55ch] block m-0',
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </h4>
-  )
-}
-
-interface H6Props {
-  children: ReactNode
-  className?: string
-  [key: string]: unknown
-}
-
-const H6 = ({ children, className = '', ...props }: H6Props) => {
-  return (
-    <h6
-      className={cn(
-        'text-[16px] font-normal font-sans leading-relaxed max-w-[55ch] block m-0',
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </h6>
-  )
-}
-
-interface PProps {
-  children: ReactNode
-  className?: string
-  [key: string]: unknown
-}
-
-const P = ({ children, className = '', ...props }: PProps) => {
-  return (
-    <p
-      className={cn('text-[14px] font-mono max-w-[55ch]', className)}
-      {...props}
-    >
-      {children}
-    </p>
-  )
-}
-
-interface SpanProps {
-  children: ReactNode
-  className?: string
-  [key: string]: unknown
-}
-
-const Span = ({ children, className = '', ...props }: SpanProps) => {
-  return (
-    <span className={className} {...props}>
-      {children}
-    </span>
-  )
-}
-
-export { H1, H2, H3, H4, H6, P, Span, sansserif, serif, monospace }
+export { H1, H2, H3, H4, H6, P, Span, Text, sansserif, serif, monospace }

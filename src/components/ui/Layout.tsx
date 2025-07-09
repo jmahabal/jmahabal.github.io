@@ -35,7 +35,7 @@ const Container = ({ children, className = '', ...props }: ContainerProps) => {
   return (
     <div
       className={cn(
-        'grid flex-col w-full max-w-4xl p-16 lg:p-16 md:p-4',
+        'grid flex-col w-full max-w-4xl py-8 md:py-16 px-4 md:px-8',
         className,
       )}
       {...props}
@@ -54,7 +54,7 @@ const Page = ({ children, className = '' }: PageProps) => {
   return (
     <div
       className={cn(
-        'flex items-center justify-center px-4 mx-auto max-w-4xl',
+        'flex items-center justify-center px-4 mx-auto max-w-4xl font-light',
         className,
       )}
     >
