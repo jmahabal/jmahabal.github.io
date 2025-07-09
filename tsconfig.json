@@ -27,6 +27,6 @@
     },
     "types": ["vite/client"]
   },
-  "include": ["src", "declaration.d.ts"],
+  "include": ["src", "declaration.d.ts", "eslint-rules"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

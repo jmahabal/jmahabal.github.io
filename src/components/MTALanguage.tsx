@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react'
 import { cn } from '../utils/cn'
 import { Page, OneColumn } from './ui/Layout'
-import { HomeLink } from './ui/HomeLink'
+import { HomeLink } from './ui/Navigation'
 
 interface MTALanguageContainerProps {
   children: ReactNode
@@ -12,7 +12,7 @@ const MTALanguageContainer = ({
   children,
   className = '',
 }: MTALanguageContainerProps) => {
-  return <div className={cn('px-4 py-4 md:px-16', className)}>{children}</div>
+  return <div className={cn('p-4 md:px-16', className)}>{children}</div>
 }
 
 interface MTALanguageImageProps {

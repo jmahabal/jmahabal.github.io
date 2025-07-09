@@ -3,8 +3,12 @@ import { useEffect, useState } from 'react'
 import ProjectCard from './ProjectCard'
 import { H1 } from './ui/Typography'
 import { Page, TwoColumn, Container } from './ui/Layout'
-import { HomeLink } from './ui/HomeLink'
-import { getAllPosts, type WritingPost } from '../utils/markdownLoader'
+import { HomeLink } from './ui/Navigation'
+import {
+  getAllPosts,
+  formatDate,
+  type WritingPost,
+} from '../utils/markdownLoader'
 
 const Writing = () => {
   const [posts, setPosts] = useState<WritingPost[]>([])
@@ -42,30 +46,26 @@ const Writing = () => {
     ...externalPosts,
     ...posts.map((post) => ({
       title: post.title,
-      date: post.date,
+      date: formatDate(post.date),
       excerpt: post.excerpt,
       url: `/writing/${post.slug}`,
-      tags: post.tags,
       imageUrl: undefined,
       imageDescription: undefined,
       isExternal: false,
     })),
-  ]
-
-  // Sort by date (newest first)
-  const sortedWriting = allWriting.sort((a, b) => {
+  ].sort((a, b) => {
     const dateA = new Date(a.date)
     const dateB = new Date(b.date)
-    return dateB.getTime() - dateA.getTime()
+    return dateB.getTime() - dateA.getTime() // newest first
   })
 
   return (
     <Page>
       <Container>
-        <H1>Writing</H1>
+        <H1 className="mb-6">Writing</H1>
 
         <TwoColumn>
-          {sortedWriting.map((post, index) => (
+          {allWriting.map((post, index) => (
             <ProjectCard
               key={index}
               title={post.title}
@@ -75,6 +75,7 @@ const Writing = () => {
               url={post.url}
               imageDescription={post.imageDescription}
               imageUrl={post.imageUrl}
+              isInternal={!post.isExternal}
             />
           ))}
         </TwoColumn>

@@ -11,12 +11,12 @@ const Home = () => {
 
   return (
     <div
-      className="flex w-full min-h-screen bg-cover bg-no-repeat items-center justify-center font-sans font-light px-8 sm:px-0"
+      className="flex min-h-screen w-full items-center justify-center bg-cover bg-no-repeat px-8 font-sans font-light sm:px-0"
       style={{
         background: 'linear-gradient(45deg, rgb(0, 160, 249), rgb(4, 6, 154))',
       }}
     >
-      <div className="translate-x-4 max-w-[300px] h-[600px] hidden sm:block">
+      <div className="hidden h-[600px] max-w-[300px] translate-x-4 sm:block">
         <img
           alt="Hello!"
           src="/jay-illus.png"
@@ -24,7 +24,7 @@ const Home = () => {
         />
       </div>
       <div
-        className="p-8 text-white max-w-[464px] h-full rounded bg-white/10 font-mono text-[18px]"
+        className="h-full max-w-[464px] rounded bg-white/10 p-8 font-mono text-[18px] text-white"
         role="main"
       >
         <H1 className="mb-2">Hi, I’m Jay.</H1>

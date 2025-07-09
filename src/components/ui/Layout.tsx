@@ -10,7 +10,7 @@ interface TwoColumnProps {
 
 const TwoColumn = ({ children, className = '' }: TwoColumnProps) => {
   return (
-    <div className={cn('grid grid-cols-1 md:grid-cols-2 gap-6', className)}>
+    <div className={cn('grid grid-cols-1 gap-6 md:grid-cols-2', className)}>
       {children}
     </div>
   )
@@ -35,7 +35,7 @@ const Container = ({ children, className = '', ...props }: ContainerProps) => {
   return (
     <div
       className={cn(
-        'grid flex-col w-full max-w-4xl py-8 md:py-16 px-4 md:px-8',
+        'grid w-full max-w-4xl flex-col px-4 py-8 md:px-8 md:py-16',
         className,
       )}
       {...props}
@@ -54,7 +54,7 @@ const Page = ({ children, className = '' }: PageProps) => {
   return (
     <div
       className={cn(
-        'flex items-center justify-center px-4 mx-auto max-w-4xl font-light',
+        'mx-auto flex max-w-4xl items-center justify-center px-4 font-light',
         className,
       )}
     >

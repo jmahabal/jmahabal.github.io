@@ -7,11 +7,11 @@ export interface WritingPost {
   date: string
   excerpt?: string
   content: string
-  tags?: string[]
+  draft?: boolean
 }
 
 export { getAllPosts, getPostBySlug }
 
 export function formatDate(dateString: string): string {
-  return format(new Date(dateString), 'MMMM d, yyyy')
+  return format(new Date(dateString), 'MMMM yyyy')
 }

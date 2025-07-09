@@ -49,7 +49,7 @@ const SocialIcon = ({ icon }: { icon: string }) => {
   const svg = toIconSVG(icon)
   if (!svg) return null
 
-  return <div className="w-full h-full fill-current">{svg}</div>
+  return <div className="size-full fill-current">{svg}</div>
 }
 
 export { SocialIcon }

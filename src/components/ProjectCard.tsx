@@ -9,6 +9,7 @@ interface ProjectCardProps {
   imageUrl?: string
   imageDescription?: string
   description?: string
+  isInternal?: boolean
 }
 
 const imageUrlBuilder = (name: string) => `/portfolio/resized/${name}.jpg`
@@ -22,26 +23,28 @@ const ProjectCard = (props: ProjectCardProps) => {
     imageUrl,
     imageDescription,
     description,
+    isInternal = false,
   } = props
 
   return (
     <div className="mb-3">
-      <div className={cn('grid grid-cols-[1fr_auto] gap-x-2 items-end')}>
+      <div className={cn('grid grid-cols-[1fr_auto] items-end gap-x-2')}>
         <H4>{title}</H4>
         <P>{date}</P>
       </div>
       <a
-        className="my-4 h-[75px] flex w-full"
+        className="my-4 flex h-[75px] w-full"
         href={url}
-        target="_blank"
-        rel="noopener noreferrer"
+        {...(isInternal
+          ? {}
+          : { target: '_blank', rel: 'noopener noreferrer' })}
         aria-label={ariaDescription}
       >
         {imageUrl ? (
           <img
             alt={imageDescription}
             src={imageUrlBuilder(imageUrl)}
-            className="w-full h-full object-cover border border-black"
+            className="size-full border border-black object-cover"
           />
         ) : (
           <div

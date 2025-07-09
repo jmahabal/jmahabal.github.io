@@ -1,13 +1,13 @@
 import ProjectCard from './ProjectCard'
 import { H1 } from './ui/Typography'
 import { Page, TwoColumn, Container } from './ui/Layout'
-import { HomeLink } from './ui/HomeLink'
+import { HomeLink } from './ui/Navigation'
 
 const Links = () => {
   return (
     <Page>
       <Container>
-        <H1>Talks</H1>
+        <H1 className="mb-6">Talks</H1>
         <TwoColumn>
           <ProjectCard
             title="Variable Fonts @ WaffleJS"

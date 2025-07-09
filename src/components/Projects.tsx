@@ -2,8 +2,8 @@ import { type ReactNode } from 'react'
 import ProjectCard from './ProjectCard'
 import { H1, H3, H4 } from './ui/Typography'
 import { TwoColumn, Page, Container } from './ui/Layout'
-import { HomeLink } from './ui/HomeLink'
-import { toKebabCase } from '../utils/common'
+import { HomeLink } from './ui/Navigation'
+import { toKebabCase } from '@/utils/common'
 
 interface ProjectSectionProps {
   title: string
@@ -12,7 +12,7 @@ interface ProjectSectionProps {
 
 const ProjectSection = ({ title, children }: ProjectSectionProps) => {
   return (
-    <div className="mt-5 mb-3">
+    <div className="mb-3 mt-5">
       <H3 id={toKebabCase(title)} className="mb-4">
         {title}
       </H3>
