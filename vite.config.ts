@@ -10,6 +10,12 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  define: {
+    global: 'globalThis',
+  },
+  optimizeDeps: {
+    include: ['buffer', 'process'],
+  },
   server: {
     port: 3000,
     open: true,

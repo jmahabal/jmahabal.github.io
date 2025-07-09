@@ -61,31 +61,28 @@ const Writing = () => {
 
   return (
     <Page>
-      <TwoColumn>
-        <div className="grid gap-10">
-          <H1>Writing</H1>
+      <div className="grid gap-10">
+        <H1>Writing</H1>
 
-          <div className="space-y-6">
-            {sortedWriting.map((post, index) => (
-              <div key={index}>
-                <ProjectCard
-                  title={post.title}
-                  date={post.date}
-                  description={post.excerpt}
-                  ariaDescription={post.title}
-                  url={post.url}
-                  imageDescription={post.imageDescription}
-                  imageUrl={post.imageUrl}
-                />
-              </div>
-            ))}
-          </div>
+        <TwoColumn>
+          {sortedWriting.map((post, index) => (
+            <ProjectCard
+              key={index}
+              title={post.title}
+              date={post.date}
+              description={post.excerpt}
+              ariaDescription={post.title}
+              url={post.url}
+              imageDescription={post.imageDescription}
+              imageUrl={post.imageUrl}
+            />
+          ))}
+        </TwoColumn>
 
-          <div className="mt-12">
-            <HomeLink />
-          </div>
+        <div className="mt-12">
+          <HomeLink />
         </div>
-      </TwoColumn>
+      </div>
     </Page>
   )
 }

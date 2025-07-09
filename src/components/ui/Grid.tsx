@@ -30,6 +30,7 @@ const Page = styled.div`
   justify-content: center;
   grid-template-columns: minmax(auto, 800px);
   padding: 1em;
+  margin: 32px auto;
 `
 // ${media.tablet`padding: 2em 1em;`} FIXME:
 // ${media.desktop`padding: 4em 1em;`} FIXME:
