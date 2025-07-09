@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react'
 import { cn } from '../utils/cn'
 import { Page, OneColumn } from './ui/Layout'
-import { HomeLink } from './ui/HomeLink'
+import { HomeLink } from './ui/Navigation'
 
 interface MTALanguageContainerProps {
   children: ReactNode

@@ -9,7 +9,7 @@ interface PostData {
   date: string
   excerpt?: string
   content: string
-  tags?: string[]
+  draft?: boolean
 }
 
 const __filename = fileURLToPath(import.meta.url)
@@ -45,7 +45,7 @@ markdownFiles.forEach((filename) => {
     date: data.date || new Date().toISOString(),
     excerpt: data.excerpt,
     content: markdownContent,
-    tags: data.tags || [],
+    draft: data.draft || false,
   })
 })
 
@@ -59,7 +59,7 @@ import { WritingPost } from '../utils/markdownLoader'
 export const posts: WritingPost[] = ${JSON.stringify(posts, null, 2)}
 
 export function getAllPosts(): WritingPost[] {
-  return posts
+  return posts.filter(post => !post.draft)
 }
 
 export function getPostBySlug(slug: string): WritingPost | null {

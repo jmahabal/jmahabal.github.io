@@ -1,8 +1,9 @@
 import { type ReactNode } from 'react'
+import { Link } from 'react-router-dom'
 import { cn } from '../../utils/cn'
+import { Arrow } from './Icons'
 import { SocialIcon } from './Icons'
 
-// IconLink Component
 interface IconLinkProps {
   href: string
   icon: string
@@ -72,5 +73,36 @@ export const TextInternalLink = ({
 }: TextInternalLinkProps) => {
   return (
     <div className={cn('text-[16px] font-mono', className)}>{children}</div>
+  )
+}
+
+export const HomeLink = () => {
+  return (
+    <Link
+      to="/"
+      className="flex items-center text-black text-[20px] no-underline group"
+    >
+      <div className="rotate-180 transition-transform duration-250 group-hover:-translate-x-1">
+        <Arrow />
+      </div>
+      Home
+    </Link>
+  )
+}
+
+export const WritingLink = ({ className }: { className?: string }) => {
+  return (
+    <Link
+      to="/writing"
+      className={cn(
+        'flex items-center text-black text-[20px] no-underline group',
+        className,
+      )}
+    >
+      <div className="rotate-180 transition-transform duration-250 group-hover:-translate-x-1">
+        <Arrow />
+      </div>
+      Writing
+    </Link>
   )
 }

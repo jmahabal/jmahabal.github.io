@@ -1,7 +1,7 @@
 import { type ReactNode } from 'react'
 import { cn } from '../utils/cn'
 import { Page, OneColumn, Container } from './ui/Layout'
-import { HomeLink } from './ui/HomeLink'
+import { HomeLink } from './ui/Navigation'
 import { H1 } from './ui/Typography'
 
 interface ResumeContainerProps {

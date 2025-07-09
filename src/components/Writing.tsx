@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react'
 import ProjectCard from './ProjectCard'
 import { H1 } from './ui/Typography'
 import { Page, TwoColumn, Container } from './ui/Layout'
-import { HomeLink } from './ui/HomeLink'
+import { HomeLink } from './ui/Navigation'
 import { getAllPosts, type WritingPost } from '../utils/markdownLoader'
 
 const Writing = () => {
@@ -45,27 +45,19 @@ const Writing = () => {
       date: post.date,
       excerpt: post.excerpt,
       url: `/writing/${post.slug}`,
-      tags: post.tags,
       imageUrl: undefined,
       imageDescription: undefined,
       isExternal: false,
     })),
   ]
 
-  // Sort by date (newest first)
-  const sortedWriting = allWriting.sort((a, b) => {
-    const dateA = new Date(a.date)
-    const dateB = new Date(b.date)
-    return dateB.getTime() - dateA.getTime()
-  })
-
   return (
     <Page>
       <Container>
-        <H1>Writing</H1>
+        <H1 className="mb-6">Writing</H1>
 
         <TwoColumn>
-          {sortedWriting.map((post, index) => (
+          {allWriting.map((post, index) => (
             <ProjectCard
               key={index}
               title={post.title}
@@ -75,6 +67,7 @@ const Writing = () => {
               url={post.url}
               imageDescription={post.imageDescription}
               imageUrl={post.imageUrl}
+              isInternal={!post.isExternal}
             />
           ))}
         </TwoColumn>
