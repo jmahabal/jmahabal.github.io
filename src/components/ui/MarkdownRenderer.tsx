@@ -1,8 +1,11 @@
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
+import rehypeRaw from 'rehype-raw'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
 import { nightOwl } from 'react-syntax-highlighter/dist/esm/styles/prism'
 import { generateId } from '../../utils/common'
+import { preprocessVerticalImages } from '../../utils/markdownHelpers'
+import { useMemo } from 'react'
 
 interface MarkdownRendererProps {
   content: string
@@ -14,10 +17,13 @@ const MarkdownRenderer = ({
   content,
   className = '',
 }: MarkdownRendererProps) => {
+  const processedContent = useMemo(() => preprocessVerticalImages(content), [content])
+
   return (
     <div className={`prose prose-lg max-w-none ${className}`}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
+        rehypePlugins={[rehypeRaw]}
         components={{
           // Custom styling for different markdown elements
           h1: ({ children }) => {
@@ -25,7 +31,7 @@ const MarkdownRenderer = ({
             return (
               <h1
                 id={id}
-                className="mb-4 mt-8 text-3xl font-bold text-gray-900"
+                className="mb-4 mt-14 text-3xl font-bold text-gray-900"
               >
                 {children}
               </h1>
@@ -45,11 +51,14 @@ const MarkdownRenderer = ({
           h3: ({ children }) => {
             const id = generateId(children?.toString() || '')
             return (
-              <h3 id={id} className="mb-2 mt-5 text-xl font-bold text-gray-900">
+              <h3 id={id} className="mb-2 mt-10 text-xl font-bold text-gray-900">
                 {children}
               </h3>
             )
           },
+          div: ({ className, children }) => (
+            <div className={className}>{children}</div>
+          ),
           p: ({ children }) => (
             <p className="mb-4 leading-relaxed text-gray-700">{children}</p>
           ),
@@ -113,12 +122,11 @@ const MarkdownRenderer = ({
             </a>
           ),
           img: ({ src, alt }) => (
-            <img
-              src={src}
-              alt={alt}
-              className="my-4 h-auto max-w-full rounded-lg shadow-sm"
-            />
-          ),
+              <figure className="my-4">
+                <img src={src} alt={alt || ''} className="h-auto max-w-full rounded-sm" />
+                {alt && <figcaption className="mt-2 text-center italic text-gray-600 text-sm">{alt}</figcaption>}
+              </figure>
+            ),
           table: ({ children }) => (
             <div className="my-4 overflow-x-auto">
               <table className="min-w-full border border-gray-300">
@@ -136,7 +144,7 @@ const MarkdownRenderer = ({
           ),
         }}
       >
-        {content}
+        {processedContent}
       </ReactMarkdown>
     </div>
   )
