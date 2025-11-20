@@ -12,6 +12,7 @@ import Writing from './components/Writing'
 import WritingPost from './components/WritingPost'
 import './index.css'
 import MTALanguage from './components/MTALanguage'
+import JourneyVisualization from './journey/JourneyVisualization'
 
 // for images
 // https://stackoverflow.com/questions/29421409/how-to-load-all-files-in-a-directory-using-webpack-without-require-statements
@@ -31,6 +32,7 @@ const router = createBrowserRouter([
   { path: '/talks', element: <Talks /> },
   { path: '/writing', element: <Writing /> },
   { path: '/writing/:slug', element: <WritingPost /> },
+  { path: '/journey', element: <JourneyVisualization /> },
 ])
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
