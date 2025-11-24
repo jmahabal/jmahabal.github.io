@@ -20,7 +20,7 @@ const Home = () => {
         <img
           alt="Hello!"
           src="/jay-illus.png"
-          className="h-[600px] w-auto object-contain"
+          className="h-[600px] w-auto min-w-[300px] object-contain"
         />
       </div>
       <div
@@ -30,18 +30,25 @@ const Home = () => {
         <H1 className="mb-2">Hi, I’m Jay.</H1>
         <div className="flex flex-col gap-3 text-[16px]">
           <div>
-            I most recently worked as a Design Engineer at 💸{' '}
+            I currently work at 📜{' '}
+            <TextLink
+              href="https://ironcladapp.com"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+             Ironclad
+            </TextLink>
+            .
+          </div>
+          <div>
+            Before that I worked on design systems at 💸{' '}
             <TextLink
               href="https://www.moderntreasury.com/"
               target="_blank"
               rel="noopener noreferrer"
             >
               Modern Treasury
-            </TextLink>
-            .
-          </div>
-          <div>
-            Before that I worked on design systems at 🥬{' '}
+            </TextLink> and 🥬{' '}
             <TextLink
               href="http://www.lattice.com/"
               target="_blank"
