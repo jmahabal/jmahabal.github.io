@@ -31,7 +31,7 @@ const Writing = () => {
     {
       title: 'Growing a UX Writing Practice',
       date: 'Jan. 2022',
-      excerpt:
+      description:
         'You can push forward your culture without waiting for someone to be responsible full-time. These are some of the strategies that worked for us at Lattice!',
       url: 'https://tech.lattice.com/article/growing-a-ux-writing-practice',
       imageUrl: 'uxwriting',
@@ -47,10 +47,10 @@ const Writing = () => {
     ...posts.map((post) => ({
       title: post.title,
       date: formatDate(post.date),
-      excerpt: post.excerpt,
+      description: post.description,
+      imageUrl: post.imageUrl,
+      imageDescription: post.imageDescription,
       url: `/writing/${post.slug}`,
-      imageUrl: undefined,
-      imageDescription: undefined,
       isExternal: false,
     })),
   ].sort((a, b) => {
@@ -70,11 +70,11 @@ const Writing = () => {
               key={index}
               title={post.title}
               date={post.date}
-              description={post.excerpt}
+              description={post.description}
               ariaDescription={post.title}
               url={post.url}
-              imageDescription={post.imageDescription}
               imageUrl={post.imageUrl}
+              imageDescription={post.imageDescription}
               isInternal={!post.isExternal}
             />
           ))}

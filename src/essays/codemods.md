@@ -1,7 +1,7 @@
 ---
 title: 'Lint Rules, Codemods, and AI'
 date: '2025-07-24'
-excerpt: 'Why I prefer lint rules over codemods and how I’m using AI for migrations.'
+description: 'Why I prefer lint rules over codemods and how I’m using AI for migrations.'
 draft: false
 ---
 

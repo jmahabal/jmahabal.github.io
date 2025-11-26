@@ -5,9 +5,11 @@ export interface WritingPost {
   slug: string
   title: string
   date: string
-  excerpt?: string
+  description?: string
   content: string
   draft?: boolean
+  imageUrl?: string
+  imageDescription?: string
 }
 
 export { getAllPosts, getPostBySlug }

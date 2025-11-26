@@ -1,7 +1,7 @@
 ---
 title: 'Hello World: My First Writing Post'
 date: '2024-01-15'
-excerpt: "Welcome to my writing! This is where I'll share thoughts on technology, design, and everything in between."
+description: "Welcome to my writing! This is where I'll share thoughts on technology, design, and everything in between."
 tags: ['introduction', 'writing', 'technology']
 ---
 
