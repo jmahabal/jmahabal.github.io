@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Print styles */
+@media print {
+  /* Hide interactive elements */
+  button,
+  [role="button"],
+  .sticky,
+  .fixed {
+    display: none !important;
+  }
+  
+  /* Optimize for printing */
+  body {
+    background: white !important;
+  }
+  
+  /* Ensure slides print on separate pages */
+  .print-slide {
+    page-break-after: always;
+    page-break-inside: avoid;
+  }
+  
+  /* Remove background gradients */
+  [style*="background"] {
+    background: white !important;
+  }
+  
+  /* Ensure text is black for printing */
+  * {
+    color: black !important;
+    background: white !important;
+  }
+  
+  /* Keep borders for structure */
+  .border {
+    border-color: #000 !important;
+  }
+}
