@@ -56,7 +56,7 @@ const ProjectCard = (props: ProjectCardProps) => {
           />
         )}
       </a>
-      {description && <P className="mb-3">{description}</P>}
+      {description && <P className="mb-3 leading-5">{description}</P>}
     </div>
   )
 }

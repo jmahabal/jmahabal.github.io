@@ -26,13 +26,26 @@ const Projects = () => {
     <Page>
       <Container>
         <div className="mb-6">
-          <H1>Projects</H1>
+          <H1 className="mb-2">Projects</H1>
           <H4>
             This is a collection of the personal projects I’ve built. Most
-            recently I’ve been interested in maps, experiential projects, and
-            typography.
+            recently I’ve been interested in maps, experiential projects,
+            typography, and AI.
           </H4>
         </div>
+
+        <ProjectSection title="AI">
+          <ProjectCard
+            title="Edit or Die"
+            date="Aug. 2026"
+            description="An experimental writing UI, inspired by Write or Die. As an LLM constantly writes toward a goal, can you edit fast enough to stay in control before it converges on slop?"
+            ariaDescription="Edit or Die, a writing app where an LLM constantly rewrites your draft"
+            url="https://edit-or-die.com"
+            imageDescription="The Edit or Die editor, with a draft on the left and a writing goal on the right"
+            imageUrl="edit-or-die"
+          />
+          <div />
+        </ProjectSection>
 
         <ProjectSection title="IRL">
           <ProjectCard
