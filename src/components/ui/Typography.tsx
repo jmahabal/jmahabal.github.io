@@ -1,6 +1,6 @@
 import { cn } from '../../utils/cn'
 
-const sansserif = 'Inter, sans-serif'
+const sansserif = 'InterVariable, Inter, sans-serif'
 const serif = 'Tangerine, serif'
 const monospace = 'Inconsolata, monospace'
 
