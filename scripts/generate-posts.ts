@@ -45,8 +45,13 @@ async function main() {
     return parseMarkdownFile(filePath, imageMap)
   })
 
-  // Step 4: Sort by date (newest first)
-  posts.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+  // Step 4: Sort by date (newest first). Undated posts stay at the end.
+  posts.sort((a, b) => {
+    if (!a.date && !b.date) return 0
+    if (!a.date) return 1
+    if (!b.date) return -1
+    return new Date(b.date).getTime() - new Date(a.date).getTime()
+  })
 
   // Step 5: Generate and write the posts data file
   const postsDataContent = generatePostsFileContent(posts)

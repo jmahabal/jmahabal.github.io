@@ -122,9 +122,9 @@ const MarkdownRenderer = ({
             </a>
           ),
           img: ({ src, alt }) => (
-              <figure className="my-4">
-                <img src={src} alt={alt || ''} className="h-auto max-w-full rounded-sm" />
-                {alt && <figcaption className="mt-2 text-center italic text-gray-600 text-sm">{alt}</figcaption>}
+              <figure className="my-4 min-w-0 max-w-full">
+                <img src={src} alt={alt || ''} className="h-auto w-full max-w-full rounded-sm" />
+                {alt && <figcaption className="mt-2 text-pretty text-center italic text-gray-600 text-sm">{alt}</figcaption>}
               </figure>
             ),
           table: ({ children }) => (

@@ -46,7 +46,7 @@ const Writing = () => {
     ...externalPosts,
     ...posts.map((post) => ({
       title: post.title,
-      date: formatDate(post.date),
+      date: post.date ? formatDate(post.date) : '',
       description: post.description,
       imageUrl: post.imageUrl,
       imageDescription: post.imageDescription,

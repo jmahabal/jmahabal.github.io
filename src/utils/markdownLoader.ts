@@ -4,7 +4,7 @@ import { getAllPosts, getPostBySlug } from '../generated/posts'
 export interface WritingPost {
   slug: string
   title: string
-  date: string
+  date?: string
   description?: string
   content: string
   draft?: boolean

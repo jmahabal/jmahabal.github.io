@@ -78,17 +78,18 @@ const WritingPostComponent = () => {
             </div>
           </div>
 
-          {/* Main content */}
-          <div>
-            <article className="rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
+          {/* Main content. min-w-0 lets the column shrink so wide images scale down
+              instead of overflowing the viewport. */}
+          <div className="min-w-0">
+            <article className="min-w-0 rounded-lg border border-gray-200 bg-white p-8 shadow-sm">
               <header className="mb-8">
-                <h1 className="mb-4 text-4xl font-bold text-gray-900">
-                  {post.title}
-                </h1>
+                <h1 className="text-4xl font-bold text-gray-900">{post.title}</h1>
 
-                <div className="mb-6 flex items-center text-sm text-gray-500">
-                  <time dateTime={post.date}>{formatDate(post.date)}</time>
-                </div>
+                {post.date ? (
+                  <div className="mt-4 flex items-center text-sm text-gray-500">
+                    <time dateTime={post.date}>{formatDate(post.date)}</time>
+                  </div>
+                ) : null}
               </header>
 
               <MarkdownRenderer content={post.content} />

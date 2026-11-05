@@ -15,28 +15,37 @@ interface Slide {
   note?: string
   links?: SlideLink[]
   showFontFeatures?: boolean
+  lead?: boolean
 }
 
 const slides: Slide[] = [
   {
     title: 'Portfolio review',
     subtitle: 'Jay Mahabal',
-    note: 'The story I want to tell is that as I grew more comfortable with my craft, a constant piece of feedback I heard was that people appreciated my attention to detail. Through my career, I’ve been thinking about how to “scale quality”.',
+    note: 'The story I want to tell is that as I grew more comfortable with my craft and in seniority, I moved from thinking about how to build great experiences myself, and towards how could I “scale quality”.',
   },
   {
-    title: 'Table Component Rewrite (Lattice)',
+    title: 'If we want to talk tech...',
+    lead: true,
+  },
+  {
+    title: 'Component Rewrite',
     note: 'This is a design system component, but it best captures the professional scope of my work and my approach to working cross-functionally.',
     links: [
       {
         kind: 'internal',
         to: '/writing/table',
-        label: 'Case study',
+        label: 'DataTable',
       },
     ],
   },
   {
+    title: 'If we want to go deep into the details...',
+    lead: true,
+  },
+  {
     title: 'Growing a UX Writing Practice',
-    note: 'I was lucky enough to work with some amazing content designers at AKQA and Apple, who taught me to look for things I can’t unsee. I’ve been, with mixed success, trying to emulate them since.',
+    note: 'I was lucky enough to work with some amazing content designers at AKQA and Apple, who taught me to look for things I now can’t unsee. I’ve been, with mixed success, trying to emulate them ever since.',
     links: [
       {
         kind: 'external',
@@ -60,19 +69,20 @@ const slides: Slide[] = [
       },
       {
         kind: 'external',
-        href: 'https://rsms.me/inter/',
+        href: 'https://rsms.me/inter/#features',
         label: 'Inter',
       },
     ],
-    note: 'I started being more curious about fonts in 2019. That “research” over the past few years has taken me through the SFPC.',
+    note: 'I started being more curious about fonts in 2019. It started as an interest, but I was excited to apply it in practice (somewhat) in my job recently.',
     showFontFeatures: true,
   },
   {
-    title: 'Below the cutline',
+    title: 'If we want to talk about product sense...',
+    lead: true,
   },
   {
     title: 'Edit or Die',
-    note: 'This is my most recent side project, but because it’s only a side project, I don’t think it reflects all I can do. However, I did make some interesting decisions, and I can talk through my process if that would be helpful!',
+    note: 'This is my most recent side project, but because it’s only a side project, I don’t think it reflects my professional capabilities.',
     links: [
       {
         kind: 'external',
@@ -113,36 +123,26 @@ const SlideLinkContent = ({ link }: { link: SlideLink }) => {
 
 const FontFeatureSpecimen = () => {
   return (
-    <div
-      aria-hidden
-      className="pointer-events-none select-none rounded-lg border border-dashed border-gray-300 bg-gray-50/80 px-3.5 py-3"
-    >
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <p className="text-[15px] font-medium leading-tight text-gray-900">
-            Illustration draft
-          </p>
-          <p className="mt-1 text-[12px] leading-tight text-gray-500">
-            Guild 11 · 3 files · updated 6:09
-          </p>
-        </div>
-        <div className="relative shrink-0">
-          <div className="rounded-md border border-gray-200 bg-white px-2.5 py-1.5 text-[11px] text-gray-700 shadow-sm">
-            Opens after 16:40
-            <span
-              aria-hidden
-              className="absolute -bottom-1 left-3 h-2 w-2 rotate-45 border-b border-r border-gray-200 bg-white"
-            />
-          </div>
-        </div>
-      </div>
+    <div className="rounded-lg border border-dashed border-gray-300 bg-gray-50/80 px-3.5 py-3">
+      <p className="text-[15px] font-medium leading-tight text-gray-900">
+        Illustration draft
+      </p>
+      <p className="mt-1 text-[12px] leading-tight text-gray-500">
+        Guild 11 · 3 files · updated 6:09 · Opens after 16:40
+      </p>
       <div className="mt-3 flex items-center gap-2">
-        <span className="rounded-md border border-gray-200 bg-white px-2.5 py-1 text-[12px] font-medium text-gray-800 shadow-sm">
+        <button
+          type="button"
+          className="cursor-pointer rounded-md border border-gray-200 bg-white px-2.5 py-1 text-[12px] font-medium text-gray-800 shadow-sm transition-colors hover:bg-gray-50"
+        >
           Edit
-        </span>
-        <span className="rounded-md bg-gray-900 px-2.5 py-1 text-[12px] font-medium text-white shadow-sm">
+        </button>
+        <button
+          type="button"
+          className="cursor-pointer rounded-md bg-gray-900 px-2.5 py-1 text-[12px] font-medium text-white shadow-sm transition-colors hover:bg-gray-800"
+        >
           Assign
-        </span>
+        </button>
         <span className="ml-auto text-[11px] text-gray-500">Straße 49</span>
       </div>
     </div>
@@ -200,7 +200,11 @@ const PortfolioReview = () => {
               <FontFeatureSlideCard slide={slide} />
             ) : (
               <div className="flex h-[420px] flex-1 flex-col justify-center rounded-lg border border-gray-200 bg-white p-8 md:p-12">
-                {slide.links?.length ? (
+                {slide.lead ? (
+                  <P className="text-[24px] font-sans text-gray-600">
+                    {slide.title}
+                  </P>
+                ) : slide.links?.length ? (
                   <H2 className="text-[40px]">{slide.title}</H2>
                 ) : (
                   <H1 className="text-[48px]">{slide.title}</H1>

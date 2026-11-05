@@ -6,23 +6,22 @@ import { cn } from '../utils/cn'
 export type CharacterVariant = {
   tag: string
   label: string
-  sample: string
 }
 
 export const CHARACTER_VARIANTS: CharacterVariant[] = [
-  { tag: 'cv08', label: 'Serifed uppercase I', sample: 'I II' },
-  { tag: 'cv01', label: 'Alternate one', sample: '1 10 11' },
-  { tag: 'cv09', label: 'Flat-top three', sample: '3 33 .31' },
-  { tag: 'cv02', label: 'Open four', sample: '4 42 14' },
-  { tag: 'cv03', label: 'Open six', sample: '6 60 16' },
-  { tag: 'cv04', label: 'Open nine', sample: '9 90 19' },
-  { tag: 'cv05', label: 'Lowercase l with tail', sample: 'l ll lab' },
-  { tag: 'cv06', label: 'Simplified u', sample: 'u un urn' },
-  { tag: 'cv07', label: 'Alternate German double s', sample: 'ß' },
-  { tag: 'cv10', label: 'Capital G with spur', sample: 'G' },
-  { tag: 'cv11', label: 'Single-story a', sample: 'a' },
-  { tag: 'cv12', label: 'Compact f', sample: 'f' },
-  { tag: 'cv13', label: 'Compact t', sample: 't' },
+  { tag: 'cv08', label: 'Serifed uppercase I' },
+  { tag: 'cv01', label: 'Alternate one' },
+  { tag: 'cv09', label: 'Flat-top three' },
+  { tag: 'cv02', label: 'Open four' },
+  { tag: 'cv03', label: 'Open six' },
+  { tag: 'cv04', label: 'Open nine' },
+  { tag: 'cv05', label: 'Lowercase l with tail' },
+  { tag: 'cv06', label: 'Simplified u' },
+  { tag: 'cv07', label: 'Alternate German double s' },
+  { tag: 'cv10', label: 'Capital G with spur' },
+  { tag: 'cv11', label: 'Single-story a' },
+  { tag: 'cv12', label: 'Compact f' },
+  { tag: 'cv13', label: 'Compact t' },
 ]
 
 export function toFontFeatureSettings(enabled: Set<string>): string {
@@ -122,14 +121,6 @@ const FontFeatureSettings = ({
                     </span>
                     <span className="min-w-0 flex-1 truncate font-sans text-[13px] text-gray-800">
                       {variant.label}
-                    </span>
-                    <span
-                      className="shrink-0 font-sans text-[13px] text-gray-500"
-                      style={{
-                        fontFeatureSettings: `"${variant.tag}" 1`,
-                      }}
-                    >
-                      {variant.sample}
                     </span>
                   </label>
                 </li>

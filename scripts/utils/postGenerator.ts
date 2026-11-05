@@ -6,7 +6,7 @@ import { extractImagePaths, updateImagePaths } from './markdownHelpers.js'
 export interface PostData {
   slug: string
   title: string
-  date: string
+  date?: string
   description?: string
   content: string
   draft?: boolean
@@ -34,7 +34,7 @@ export function parseMarkdownFile(
   return {
     slug,
     title: data.title || slug,
-    date: data.date || new Date().toISOString(),
+    ...(data.date ? { date: String(data.date) } : {}),
     description: data.description,
     content: optimizedContent,
     draft: data.draft || false,

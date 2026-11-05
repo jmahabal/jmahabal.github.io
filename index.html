@@ -1,6 +1,13 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <script>
+      // Prod bundles hoist prism-core before refractor can set manual:true.
+      // Prism then highlightAll()s our <code> blocks and assigns HAST objects
+      // to innerHTML, which stringifies as "[object Object]".
+      window.Prism = window.Prism || {}
+      window.Prism.manual = true
+    </script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
